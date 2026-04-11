@@ -192,6 +192,15 @@ iframe {
   color: white;
 }
 
+.bio img {
+  width: 160px;
+  border-radius: 50%;
+}
+
+.bio p {
+  max-width: 600px;
+}
+
 /* Hover effect */
 #fullscreenBtn:hover {
   background: black;
