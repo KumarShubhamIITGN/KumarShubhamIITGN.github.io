@@ -130,3 +130,8 @@ section {
   background: #1e1e1e;
   color: white;
 }
+
+#achievements p {
+  margin: 12px 0;
+  font-size: 16px;
+}
