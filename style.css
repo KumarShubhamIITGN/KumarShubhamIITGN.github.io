@@ -93,3 +93,30 @@ section {
 .dark .card {
   background: #1e1e1e;
 }
+
+.contact {
+  display: flex;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.contact a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: white;
+  padding: 10px 15px;
+  border-radius: 8px;
+  text-decoration: none;
+  color: black;
+  transition: 0.3s;
+}
+
+.contact a:hover {
+  transform: scale(1.05);
+}
+
+.dark .contact a {
+  background: #1e1e1e;
+  color: white;
+}
