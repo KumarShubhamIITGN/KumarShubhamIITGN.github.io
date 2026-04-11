@@ -21,3 +21,9 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
 });
+
+fetch("https://api.countapi.xyz/hit/shubham-portfolio/visits")
+  .then(res => res.json())
+  .then(data => {
+    document.getElementById("visitor-count").textContent = data.value;
+  });
