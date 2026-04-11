@@ -37,8 +37,10 @@ section {
 /* BIO */
 .bio {
   display: flex;
-  align-items: center;
-  gap: 30px;
+  flex-direction: column;   /* stack vertically */
+  align-items: center;      /* center everything */
+  text-align: center;       /* center text */
+  gap: 20px;
 }
 
 .bio img {
