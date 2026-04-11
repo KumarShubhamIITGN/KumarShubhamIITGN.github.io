@@ -6,6 +6,16 @@ function showTab(tabId) {
   document.getElementById(tabId).classList.add('active');
 }
 
-function toggleDarkMode() {
-  document.body.classList.toggle("dark");
+function toggleTheme() {
+  const body = document.body;
+  const btn = document.getElementById("themeToggle");
+
+  body.classList.toggle("dark");
+
+  // Change icon based on mode
+  if (body.classList.contains("dark")) {
+    btn.textContent = "☀️"; // show day icon
+  } else {
+    btn.textContent = "🌙"; // show night icon
+  }
 }
