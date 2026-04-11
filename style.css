@@ -38,29 +38,52 @@ section {
 .bio {
   display: flex;
   align-items: center;
-  justify-content: center;   /* centers whole block */
+  justify-content: center;
   gap: 40px;
-  max-width: 900px;          /* keeps content centered nicely */
-  margin: 60px auto;         /* centers section horizontally */
-  text-align: left;
+  max-width: 1000px;
+  margin: 60px auto;
 }
 
 /* Image */
 .bio img {
   width: 180px;
   height: 180px;
-  object-fit: cover;   /* prevents stretching */
+  object-fit: cover;
   border-radius: 50%;
 }
 
-/* Text container */
-.bio div {
-  max-width: 500px;
+/* Right side box */
+.about-box {
+  background: white;
+  padding: 20px 25px;
+  border-radius: 12px;
+  max-width: 600px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  text-align: left;
+}
+
+/* Links inside text */
+.about-box a {
+  color: #0077cc;
+  text-decoration: none;
+}
+
+.about-box a:hover {
+  text-decoration: underline;
+}
+
+/* Dark mode */
+.dark .about-box {
+  background: #1e1e1e;
 }
 
 @media (max-width: 768px) {
   .bio {
     flex-direction: column;
+    text-align: center;
+  }
+
+  .about-box {
     text-align: center;
   }
 }
