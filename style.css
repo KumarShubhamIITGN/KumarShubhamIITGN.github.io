@@ -1,45 +1,35 @@
-html {
-  scroll-behavior: smooth;
-}
-
 body {
-  font-family: Arial;
   margin: 0;
+  font-family: Arial;
   background: #f5f5f5;
   transition: 0.3s;
 }
 
 /* NAVBAR */
 nav {
-  position: sticky;
-  top: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   background: #222;
-  padding: 10px;
-  text-align: center;
+  color: white;
+  padding: 15px 30px;
 }
 
 nav a {
+  margin: 0 10px;
+  cursor: pointer;
   color: white;
-  margin: 10px;
   text-decoration: none;
 }
 
 nav button {
-  margin-left: 20px;
+  margin-left: 10px;
   cursor: pointer;
-}
-
-/* HEADER */
-header {
-  background: #333;
-  color: white;
-  padding: 40px;
-  text-align: center;
 }
 
 /* SECTIONS */
 section {
-  padding: 20px;
+  padding: 40px;
   max-width: 900px;
   margin: auto;
 }
@@ -48,18 +38,18 @@ section {
 .bio {
   display: flex;
   align-items: center;
-  gap: 20px;
+  gap: 30px;
 }
 
 .bio img {
-  width: 150px;
+  width: 160px;
   border-radius: 50%;
 }
 
 /* CARDS */
 .card {
   background: white;
-  padding: 15px;
+  padding: 20px;
   margin: 15px 0;
   border-radius: 10px;
   transition: 0.3s;
@@ -76,6 +66,22 @@ section {
   padding: 10px 15px;
   text-decoration: none;
   border-radius: 5px;
+}
+
+/* TAB SYSTEM */
+.tab {
+  display: none;
+  animation: fade 0.4s;
+}
+
+.tab.active {
+  display: block;
+}
+
+/* ANIMATION */
+@keyframes fade {
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 
 /* DARK MODE */
