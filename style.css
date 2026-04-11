@@ -135,3 +135,12 @@ section {
   margin: 12px 0;
   font-size: 16px;
 }
+
+#themeToggle {
+  margin-left: 15px;
+  padding: 6px 10px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+}
