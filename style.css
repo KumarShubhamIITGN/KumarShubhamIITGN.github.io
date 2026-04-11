@@ -37,21 +37,32 @@ section {
 /* BIO */
 .bio {
   display: flex;
-  align-items: center;   /* vertically align */
-  justify-content: center;
-  gap: 30px;
+  align-items: center;
+  justify-content: center;   /* centers whole block */
+  gap: 40px;
+  max-width: 900px;          /* keeps content centered nicely */
+  margin: 60px auto;         /* centers section horizontally */
   text-align: left;
 }
 
 /* Image */
 .bio img {
-  width: 160px;
+  width: 180px;
+  height: 180px;
+  object-fit: cover;   /* prevents stretching */
   border-radius: 50%;
 }
 
 /* Text container */
 .bio div {
-  max-width: 600px;
+  max-width: 500px;
+}
+
+@media (max-width: 768px) {
+  .bio {
+    flex-direction: column;
+    text-align: center;
+  }
 }
 
 /* CARDS */
