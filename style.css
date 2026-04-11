@@ -243,3 +243,13 @@ iframe {
 #fullscreenBtn:hover {
   background: black;
 }
+
+.about-footer {
+  margin-top: 20px;
+  font-size: 14px;
+  color: #aaa;
+}
+
+.about-footer p {
+  margin: 5px 0;
+}
