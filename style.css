@@ -250,6 +250,41 @@ iframe {
   color: #aaa;
 }
 
+/* layout */
+.about-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  max-width: 1100px;
+  margin: 60px auto;
+}
+
+/* image */
+.image-card img {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* text box */
+.about-box {
+  background: #1e1e1e;
+  padding: 20px;
+  border-radius: 12px;
+  color: #ddd;
+  max-width: 600px;
+}
+
+/* ✅ footer at bottom */
+.about-footer {
+  text-align: center;
+  margin-top: 40px;
+  font-size: 14px;
+  color: #aaa;
+}
+
 .about-footer p {
   margin: 5px 0;
 }
