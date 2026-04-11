@@ -6,16 +6,14 @@ function showTab(tabId) {
   document.getElementById(tabId).classList.add('active');
 }
 
-function toggleTheme() {
-  const body = document.body;
-  const btn = document.getElementById("themeToggle");
+const btn = document.getElementById("themeToggle");
 
-  body.classList.toggle("dark");
+btn.addEventListener("click", function () {
+  document.body.classList.toggle("dark");
 
-  // Change icon based on mode
-  if (body.classList.contains("dark")) {
-    btn.textContent = "☀️"; // show day icon
+  if (document.body.classList.contains("dark")) {
+    btn.innerHTML = "☀️"; // day icon
   } else {
-    btn.textContent = "🌙"; // show night icon
+    btn.innerHTML = "🌙"; // night icon
   }
-}
+});
