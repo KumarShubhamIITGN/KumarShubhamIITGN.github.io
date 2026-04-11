@@ -36,11 +36,19 @@ section {
 
 /* BIO */
 .bio {
-  display: flex;
-  flex-direction: column;   /* stack vertically */
-  align-items: center;      /* center everything */
-  text-align: center;       /* center text */
-  gap: 20px;
+  display: block !important;
+  text-align: center;
+}
+
+.bio img {
+  display: block;
+  margin: 0 auto 20px auto; /* center + space below */
+  width: 160px;
+  border-radius: 50%;
+}
+
+.bio div {
+  display: block;
 }
 
 .bio img {
