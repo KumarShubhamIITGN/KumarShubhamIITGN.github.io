@@ -96,26 +96,36 @@ section {
 
 .contact {
   display: flex;
-  gap: 20px;
-  margin-top: 20px;
+  justify-content: center;   /* center alignment */
+  gap: 30px;                 /* space between LinkedIn & Email */
+  margin-top: 30px;
 }
 
 .contact a {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 12px;                 /* space between icon and text */
+  padding: 12px 20px;        /* better button size */
+  border-radius: 10px;
   background: white;
-  padding: 10px 15px;
-  border-radius: 8px;
   text-decoration: none;
   color: black;
-  transition: 0.3s;
+  font-size: 16px;
+  transition: all 0.3s ease;
 }
 
+/* Hover effect */
 .contact a:hover {
-  transform: scale(1.05);
+  transform: translateY(-3px);
 }
 
+/* Icon size fix */
+.contact svg {
+  width: 22px;
+  height: 22px;
+}
+
+/* Dark mode */
 .dark .contact a {
   background: #1e1e1e;
   color: white;
