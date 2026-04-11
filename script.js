@@ -12,8 +12,8 @@ btn.addEventListener("click", function () {
   document.body.classList.toggle("dark");
 
   if (document.body.classList.contains("dark")) {
-    btn.innerHTML = "☀️"; // day icon
+    btn.textContent = "Light";
   } else {
-    btn.innerHTML = "🌙"; // night icon
+    btn.textContent = "Dark";
   }
 });
