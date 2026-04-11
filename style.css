@@ -36,24 +36,22 @@ section {
 
 /* BIO */
 .bio {
-  display: block !important;
-  text-align: center;
+  display: flex;
+  align-items: center;   /* vertically align */
+  justify-content: center;
+  gap: 30px;
+  text-align: left;
 }
 
+/* Image */
 .bio img {
-  display: block;
-  margin: 0 auto 20px auto; /* center + space below */
   width: 160px;
   border-radius: 50%;
 }
 
+/* Text container */
 .bio div {
-  display: block;
-}
-
-.bio img {
-  width: 160px;
-  border-radius: 50%;
+  max-width: 600px;
 }
 
 /* CARDS */
