@@ -6,17 +6,75 @@
 </head>
 <body>
 
-  <h1>Hello, I'm Kumar 👋</h1>
-  <p>I am a Computer Science student.</p>
+  <!-- NAVBAR -->
+  <nav>
+    <a href="#about">About</a>
+    <a href="#projects">Projects</a>
+    <a href="#teaching">Teaching</a>
+    <a href="#achievements">Achievements</a>
+    <a href="#cv">CV</a>
+    <a href="#contact">Contact</a>
+    <button onclick="toggleDarkMode()">🌙</button>
+  </nav>
 
-  <h2>Projects</h2>
-  <ul>
-    <li>Language Identification System</li>
-    <li>gRPC Banking Application</li>
-  </ul>
+  <!-- HEADER -->
+  <header>
+    <h1>Kumar</h1>
+    <p>Computer Science Student</p>
+  </header>
 
-  <h2>Contact</h2>
-  <p>Email: your-email@example.com</p>
+  <!-- ABOUT -->
+  <section id="about" class="bio">
+    <img src="profile.jpg">
+    <div>
+      <h2>About Me</h2>
+      <p>I am interested in distributed systems, backend development and problem solving.</p>
+    </div>
+  </section>
 
+  <!-- PROJECTS -->
+  <section id="projects">
+    <h2>Projects</h2>
+
+    <div class="card">
+      <h3>Language Identification System</h3>
+      <p>Detects language using ML techniques.</p>
+    </div>
+
+    <div class="card">
+      <h3>gRPC Banking Application</h3>
+      <p>Client-server system using Go and gRPC.</p>
+    </div>
+  </section>
+
+  <!-- TEACHING -->
+  <section id="teaching">
+    <h2>Teaching Experience</h2>
+    <div class="card">
+      <p>Teaching Assistant for Data Structures.</p>
+    </div>
+  </section>
+
+  <!-- ACHIEVEMENTS -->
+  <section id="achievements">
+    <h2>Achievements</h2>
+    <div class="card">
+      <p>Academic and project achievements here.</p>
+    </div>
+  </section>
+
+  <!-- CV -->
+  <section id="cv">
+    <h2>CV</h2>
+    <a href="cv.pdf" target="_blank" class="btn">Download Resume</a>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <h2>Contact</h2>
+    <p>Email: your-email@example.com</p>
+  </section>
+
+  <script src="script.js"></script>
 </body>
 </html>
