@@ -9,16 +9,28 @@ function showTab(tabId) {
 // RUN AFTER PAGE LOAD
 document.addEventListener("DOMContentLoaded", function () {
 
-  // 🌙 THEME TOGGLE
-  const btn = document.getElementById("themeToggle");
+ const btn = document.getElementById("themeToggle");
 
+  // 🔹 LOAD SAVED THEME
+  const savedTheme = localStorage.getItem("theme");
+
+  if (savedTheme === "dark") {
+    document.body.classList.add("dark");
+    if (btn) btn.textContent = "Light";
+  } else {
+    if (btn) btn.textContent = "Dark";
+  }
+
+  // 🔹 TOGGLE THEME
   if (btn) {
     btn.addEventListener("click", function () {
       document.body.classList.toggle("dark");
 
       if (document.body.classList.contains("dark")) {
+        localStorage.setItem("theme", "dark");
         btn.textContent = "Light";
       } else {
+        localStorage.setItem("theme", "light");
         btn.textContent = "Dark";
       }
     });
