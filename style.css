@@ -309,3 +309,34 @@ iframe {
   border: 4px solid #00ff88;
   box-shadow: 0 0 15px rgba(0,255,136,0.5);
 }
+
+
+/* Achievement box */
+.achievement {
+  background: white;
+  margin: 15px auto;
+  padding: 15px;
+  border-radius: 12px;
+  max-width: 600px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+/* Title */
+.ach-title {
+  font-weight: bold;
+  font-size: 18px;
+}
+
+/* Hidden content */
+.ach-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+}
+
+/* When active */
+.achievement.active .ach-content {
+  max-height: 100px;
+  margin-top: 10px;
+}
