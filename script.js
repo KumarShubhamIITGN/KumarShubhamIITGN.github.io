@@ -62,3 +62,12 @@ function toggleAch(element) {
 function toggleProject(element) {
   element.classList.toggle("active");
 }
+function toggleProject(element) {
+  element.classList.toggle("active");
+}
+
+// IMPORTANT: prevent parent click
+function toggleSub(event, element) {
+  event.stopPropagation();  // 🔥 KEY LINE
+  element.classList.toggle("active");
+}
