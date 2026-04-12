@@ -360,3 +360,51 @@ iframe {
 .dark .achievement:hover {
   background: #2a2a2a;
 }
+
+/* PROJECT BOX */
+.project {
+  background: white;
+  margin: 15px auto;
+  padding: 15px;
+  border-radius: 12px;
+  max-width: 650px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+/* TITLE */
+.proj-title {
+  font-weight: bold;
+  font-size: 18px;
+}
+
+/* HIDDEN CONTENT */
+.proj-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+}
+
+/* ACTIVE STATE */
+.project.active .proj-content {
+  max-height: 120px;
+  margin-top: 10px;
+}
+
+.dark .project {
+  background: #1e1e1e;
+  color: white;
+  border: 1px solid #333;
+}
+
+.dark .proj-title {
+  color: #00ff88;
+}
+
+.dark .proj-content {
+  color: #ccc;
+}
+
+.dark .project:hover {
+  background: #2a2a2a;
+}
