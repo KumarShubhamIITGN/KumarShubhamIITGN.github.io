@@ -408,3 +408,70 @@ iframe {
 .dark .project:hover {
   background: #2a2a2a;
 }
+
+
+/* MAIN PROJECT */
+.project {
+  background: white;
+  margin: 15px auto;
+  padding: 15px;
+  border-radius: 12px;
+  max-width: 650px;
+  cursor: pointer;
+}
+
+/* TITLE */
+.proj-title {
+  font-weight: bold;
+  font-size: 18px;
+}
+
+/* COLLAPSE MAIN */
+.proj-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease;
+}
+
+.project.active .proj-content {
+  max-height: 1000px;  /* big enough */
+  margin-top: 10px;
+}
+
+/* SUB PROJECT */
+.sub-project {
+  margin-top: 10px;
+  padding: 10px;
+  background: #f0f0f0;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+/* SUB TITLE */
+.sub-title {
+  font-weight: 600;
+}
+
+/* SUB CONTENT */
+.sub-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+}
+
+.sub-project.active .sub-content {
+  max-height: 200px;
+  margin-top: 8px;
+}
+.dark .project {
+  background: #1e1e1e;
+  color: white;
+}
+
+.dark .sub-project {
+  background: #2a2a2a;
+}
+
+.dark .sub-content {
+  color: #ccc;
+}
