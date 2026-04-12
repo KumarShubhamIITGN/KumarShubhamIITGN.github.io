@@ -33,3 +33,7 @@ fetch("https://api.countapi.xyz/hit/shubham-portfolio/visits")
   .then(data => {
     document.getElementById("visitor-count").textContent = data.value;
   });
+
+function toggleAch(element) {
+  element.classList.toggle("active");
+}
