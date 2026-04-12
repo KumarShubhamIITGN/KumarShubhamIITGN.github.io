@@ -340,3 +340,23 @@ iframe {
   max-height: 100px;
   margin-top: 10px;
 }
+
+
+/* DARK MODE FIX FOR ACHIEVEMENTS */
+.dark .achievement {
+  background: #1e1e1e;   /* dark card */
+  color: white;
+  border: 1px solid #333;
+}
+
+.dark .ach-title {
+  color: #00ff88;   /* highlight title */
+}
+
+.dark .ach-content {
+  color: #ccc;   /* readable text */
+}
+
+.dark .achievement:hover {
+  background: #2a2a2a;
+}
