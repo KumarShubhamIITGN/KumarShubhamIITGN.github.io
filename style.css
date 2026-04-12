@@ -288,3 +288,30 @@ iframe {
 .about-footer p {
   margin: 5px 0;
 }
+
+/* ABOUT PAGE COLOR THEME */
+#about .about-box a {
+  color: #00ff88;   /* green links */
+}
+
+#about .about-box a:hover {
+  color: #00cc6a;
+}
+
+/* optional: heading color */
+#about h2 {
+  color: #00ff88;
+}
+
+#about .image-card img {
+  border-radius: 50%;   /* circle */
+}
+
+#about .about-box {
+  border-radius: 20px;   /* more rounded */
+}
+
+#about .image-card img {
+  border: 4px solid #00ff88;
+  box-shadow: 0 0 15px rgba(0,255,136,0.5);
+}
