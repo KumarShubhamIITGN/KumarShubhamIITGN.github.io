@@ -47,3 +47,6 @@ document.addEventListener("DOMContentLoaded", function () {
 function toggleAch(element) {
   element.classList.toggle("active");
 }
+function toggleProject(element) {
+  element.classList.toggle("active");
+}
