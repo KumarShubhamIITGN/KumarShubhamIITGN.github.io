@@ -66,12 +66,42 @@ for which I have been awarded an institute fellowship.
 </section>
   
 <!-- PROJECTS -->
-<section id="projects" class="tab">
+  <section id="projects" class="tab">
+
   <h1>Projects</h1>
 
-  <div class="card">
-    <h3>Language Identification System</h3>
-    <p>
+  <!-- 🔹 PRESENT PROJECTS -->
+  <h2>Present</h2>
+
+  <div class="project" onclick="toggleProject(this)">
+    <div class="proj-title">Current Research Work</div>
+    <div class="proj-content">
+      <p>Working on research in distributed systems and performance optimization.</p>
+    </div>
+  </div>
+
+  <div class="project" onclick="toggleProject(this)">
+    <div class="proj-title">Ongoing ML Project</div>
+    <div class="proj-content">
+      <p>Exploring language identification systems using machine learning techniques.</p>
+    </div>
+  </div>
+
+
+  <!-- 🔹 PAST PROJECTS -->
+  <h2>Past</h2>
+
+  <div class="project" onclick="toggleProject(this)">
+    <div class="proj-title">gRPC Banking System</div>
+    <div class="proj-content">
+      <p>Built a distributed banking system using Go and gRPC supporting debit/credit operations.</p>
+    </div>
+  </div>
+
+  <div class="project" onclick="toggleProject(this)">
+    <div class="proj-title">Language Identification System</div>
+    <div class="proj-content">
+      <p>
       •	Developed a language identification model capable of automatically detecting 22 Indic languages from text written in both native scripts and romanized form.
       <br>
       •	Utilized a Transformer-based model to convert sentences into numerical embeddings for effective representation learning. <br>
@@ -79,12 +109,9 @@ for which I have been awarded an institute fellowship.
       •	Further fine-tuned the model to classify sentences into one of the 22 Indic languages with high accuracy. <br>
 
     </p>
+    </div>
   </div>
 
-  <div class="card">
-    <h3>gRPC Banking Application</h3>
-    <p>Client-server banking system using Go and gRPC.</p>
-  </div>
 </section>
 
 <!-- TEACHING -->
