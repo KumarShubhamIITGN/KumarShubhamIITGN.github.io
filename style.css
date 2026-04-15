@@ -568,3 +568,83 @@ iframe {
 .dark .card:hover {
   background: #2a2a2a;
 }
+
+
+/* ===== MOBILE ALIGNMENT FIX ===== */
+@media (max-width: 768px) {
+
+  /* GENERAL PAGE */
+  body {
+    padding: 10px;
+  }
+
+  section {
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  /* HEADINGS */
+  h1 {
+    text-align: center;
+    font-size: 22px;
+  }
+
+  /* ABOUT SECTION */
+  .about-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .about-box {
+    width: 100%;
+    max-width: 95%;
+  }
+
+  .image-card img {
+    width: 140px;
+    height: 140px;
+  }
+
+  /* PROJECTS + ACHIEVEMENTS + TEACHING */
+  .project,
+  .achievement,
+  .card {
+    width: 100%;
+    max-width: 95%;
+    margin: 10px auto;
+    text-align: left;
+  }
+
+  /* SUB PROJECT */
+  .sub-project {
+    width: 100%;
+  }
+
+  /* NAVBAR */
+  nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+  }
+
+  nav button {
+    font-size: 13px;
+    padding: 6px 10px;
+  }
+
+  /* CONTACT ICONS */
+  .contact-icons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+  }
+
+  /* CV iframe */
+  iframe {
+    width: 100%;
+    height: 70vh;
+  }
+
+}
