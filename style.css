@@ -542,3 +542,8 @@ iframe {
 .dark .highlight {
   color: #00ff88;
 }
+
+.dark .highlight {
+  color: #00ff88;
+  text-shadow: 0 0 5px rgba(0,255,136,0.5);
+}
