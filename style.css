@@ -475,3 +475,70 @@ iframe {
 .dark .sub-content {
   color: #ccc;
 }
+
+/* ===== MOBILE RESPONSIVE ===== */
+@media (max-width: 768px) {
+
+  /* About section */
+  .about-container {
+    flex-direction: column;
+    text-align: center;
+    gap: 20px;
+  }
+
+  .about-box {
+    max-width: 90%;
+  }
+
+  .image-card img {
+    width: 150px;
+    height: 150px;
+  }
+
+  /* Projects & Achievements */
+  .project,
+  .achievement {
+    max-width: 90%;
+    font-size: 14px;
+  }
+
+  /* Headings */
+  h1 {
+    font-size: 22px;
+  }
+
+  h2 {
+    font-size: 18px;
+  }
+
+  /* Navbar (if horizontal) */
+  nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  nav button {
+    padding: 8px 12px;
+    font-size: 14px;
+  }
+
+}
+
+@media (max-width: 768px) {
+  body {
+    font-size: 15px;
+  }
+}
+
+/* light mode */
+.highlight {
+  color: #0077cc;
+  font-weight: bold;
+}
+
+/* dark mode */
+.dark .highlight {
+  color: #00ff88;
+}
