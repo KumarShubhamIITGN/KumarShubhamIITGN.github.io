@@ -683,3 +683,12 @@ iframe {
   background: #00ff88;
   color: black;
 }
+
+/* Make toggle stand out slightly */
+#themeToggle {
+  border: 2px solid white;
+}
+
+.dark #themeToggle {
+  border: 2px solid black;
+}
