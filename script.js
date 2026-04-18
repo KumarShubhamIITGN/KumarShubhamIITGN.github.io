@@ -27,12 +27,10 @@ document.addEventListener("DOMContentLoaded", function () {
       document.body.classList.toggle("dark");
 
       if (document.body.classList.contains("dark")) {
-        localStorage.setItem("theme", "dark");
-        btn.textContent = "Light";
-      } else {
-        localStorage.setItem("theme", "light");
-        btn.textContent = "Dark";
-      }
+  btn.textContent = "☀️";
+} else {
+  btn.textContent = "🌙";
+}
     });
   }
 
