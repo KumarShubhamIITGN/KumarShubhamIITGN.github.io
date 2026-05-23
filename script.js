@@ -25,14 +25,23 @@ function showTab(tabId) {
 
 document.addEventListener("DOMContentLoaded", function () {
 
-  // =====================================
-  // 🌙 THEME TOGGLE
-  // =====================================
+ document.addEventListener("DOMContentLoaded", function () {
 
   const btn = document.getElementById("themeToggle");
 
-  const savedTheme = localStorage.getItem("theme");
+  /* ================================= */
+  /* 🌙 DEFAULT DARK MODE */
+  /* ================================= */
 
+  let savedTheme = localStorage.getItem("theme");
+
+  // DEFAULT = DARK
+  if (!savedTheme) {
+    savedTheme = "dark";
+    localStorage.setItem("theme", "dark");
+  }
+
+  // APPLY SAVED THEME
   if (savedTheme === "dark") {
 
     document.body.classList.add("dark");
@@ -43,27 +52,37 @@ document.addEventListener("DOMContentLoaded", function () {
 
   } else {
 
+    document.body.classList.remove("dark");
+
     if (btn) {
       btn.textContent = "🌙";
     }
-
   }
 
-  // THEME BUTTON CLICK
+  /* ================================= */
+  /* 🔄 TOGGLE THEME */
+  /* ================================= */
+
   if (btn) {
 
-    btn.addEventListener("click", function () {
+    btn.addEventListener("click", () => {
 
       document.body.classList.toggle("dark");
 
+      // IF DARK
       if (document.body.classList.contains("dark")) {
 
         localStorage.setItem("theme", "dark");
+
         btn.textContent = "☀️";
 
-      } else {
+      }
+
+      // IF LIGHT
+      else {
 
         localStorage.setItem("theme", "light");
+
         btn.textContent = "🌙";
 
       }
@@ -71,6 +90,8 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
   }
+
+});
 
 
   // =====================================
