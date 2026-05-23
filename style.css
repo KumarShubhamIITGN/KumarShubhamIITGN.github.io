@@ -817,3 +817,33 @@ body {
   }
 
 }
+
+/* 🌌 SPACE BACKGROUND */
+#space {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background: black;
+}
+
+/* Transparent sections */
+section,
+.about-box,
+.project,
+.achievement,
+.card {
+  position: relative;
+  z-index: 1;
+}
+
+/* Optional glass effect */
+.about-box,
+.project,
+.achievement,
+.card {
+  background: rgba(20,20,20,0.7);
+  backdrop-filter: blur(6px);
+}
