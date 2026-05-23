@@ -5,243 +5,313 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>WELCOME TO MY WEBPAGE | Portfolio</title>
+
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-<canvas id="space"></canvas>
-<!-- NAVBAR -->
-<nav>
-  <!-- NAVBAR -->
-<nav>
 
-  <h2 class="logo">It'z Shubham !!</h2>
+  <!-- 🌌 SPACE BACKGROUND -->
+  <canvas id="space"></canvas>
 
-  <!-- 🍔 Hamburger -->
-  <div class="hamburger" id="hamburger">
-    ☰
-  </div>
+  <!-- ================================= -->
+  <!-- 🍔 NAVBAR -->
+  <!-- ================================= -->
 
-  <!-- MENU -->
-  <div class="side-menu" id="sideMenu">
+  <nav>
 
-    <button onclick="showTab('about')">🧑</button>
-    <button onclick="showTab('projects')">💻</button>
-    <button onclick="showTab('teaching')">🎓</button>
-    <button onclick="showTab('achievements')">🏆</button>
-    <button onclick="showTab('cv')">📄</button>
-    <button onclick="showTab('contact')">✉️</button>
-    <button id="themeToggle">🌙</button>
+    <h2 class="logo">It'z Shubham !!</h2>
 
-  </div>
-
-</nav>
-
-<!-- ABOUT -->
-<section id="about" class="tab active">
-
-  <div class="about-container">
-
-    <!-- LEFT IMAGE -->
-    <div class="image-card">
-      <img src="profile.jpeg">
+    <!-- 🍔 Hamburger -->
+    <div class="hamburger" id="hamburger">
+      ☰
     </div>
 
-    <!-- RIGHT TEXT -->
-    <div class="about-content">
-      <h2>👤 About Me</h2>
+    <!-- 📱 SIDE MENU -->
+    <div class="side-menu" id="sideMenu">
 
-      <div class="about-box">
-        <p>
-      I am Shubham Kumar, a M.Tech student in Computer Science and Engg.(Computer Systems) at 
-<a href="https://www.iitgn.ac.in/" target="_blank">IIT Gandhinagar</a>, 
-working under the supervision of 
-<a href="https://abhishek.people.iitgn.ac.in/" target="_blank">Prof. Abhishek Bichhawat</a>. 
+      <button onclick="showTab('about')">🧑</button>
 
-Prior to this, I completed my B.Tech in Computer Science and Engg. at 
-<a href="https://mgcub.ac.in/" target="_blank">Mahatma Gandhi Central University, Bihar</a>. 
+      <button onclick="showTab('projects')">💻</button>
 
-I am currently a member of the 
-<a href="https://iitgn-fuss.github.io/" target="_blank">FUSS Research Group</a>. 
+      <button onclick="showTab('teaching')">🎓</button>
 
-Alongside my academic work, I serve as a Teaching Assistant for undergraduate courses, 
-for which I have been awarded an institute fellowship.
-    </p>
+      <button onclick="showTab('achievements')">🏆</button>
+
+      <button onclick="showTab('cv')">📄</button>
+
+      <button onclick="showTab('contact')">✉️</button>
+
+      <button id="themeToggle">🌙</button>
+
+    </div>
+
+  </nav>
+
+  <!-- ================================= -->
+  <!-- 👤 ABOUT -->
+  <!-- ================================= -->
+
+  <section id="about" class="tab active">
+
+    <div class="about-container">
+
+      <!-- LEFT IMAGE -->
+      <div class="image-card">
+        <img src="profile.jpeg" alt="Profile">
       </div>
+
+      <!-- RIGHT TEXT -->
+      <div class="about-content">
+
+        <h2>👤 About Me</h2>
+
+        <div class="about-box">
+
+          <p>
+            I am Shubham Kumar, a M.Tech student in Computer Science and Engg.(Computer Systems) at 
+            <a href="https://www.iitgn.ac.in/" target="_blank">IIT Gandhinagar</a>, 
+            working under the supervision of 
+            <a href="https://abhishek.people.iitgn.ac.in/" target="_blank">
+              Prof. Abhishek Bichhawat
+            </a>.
+          </p>
+
+          <p>
+            Prior to this, I completed my B.Tech in Computer Science and Engg. at 
+            <a href="https://mgcub.ac.in/" target="_blank">
+              Mahatma Gandhi Central University, Bihar
+            </a>.
+          </p>
+
+          <p>
+            I am currently a member of the 
+            <a href="https://iitgn-fuss.github.io/" target="_blank">
+              FUSS Research Group
+            </a>.
+          </p>
+
+          <p>
+            Alongside my academic work, I serve as a Teaching Assistant for undergraduate courses, 
+            for which I have been awarded an institute fellowship.
+          </p>
+
+        </div>
+
+      </div>
+
     </div>
 
-  </div>
+    <!-- FOOTER -->
+    <div class="about-footer">
 
-  <!-- ✅ FULL WIDTH FOOTER (OUTSIDE container) -->
-  <div class="about-footer">
-    <p class="about-footer"> 
-  <img src="https://visitor-badge.laobi.icu/badge?page_id=shubham-iitgn-portfolio&style=flat" />
-  <br>
-  © 2026 Shubham Kumar. All rights reserved.
-</p>
-  </div>
+      <img
+        src="https://visitor-badge.laobi.icu/badge?page_id=shubham-iitgn-portfolio&style=flat"
+        alt="visitor count"
+      >
 
-</section>
-  
-<!-- PROJECTS -->
+      <p>
+        © 2026 Shubham Kumar. All rights reserved.
+      </p>
+
+    </div>
+
+  </section>
+
+  <!-- ================================= -->
+  <!-- 💻 PROJECTS -->
+  <!-- ================================= -->
+
   <section id="projects" class="tab">
 
-  <h1>Projects</h1>
+    <h1>Projects</h1>
 
-  <!-- 🔹 PRESENT PROJECTS -->
-  <h2>Present</h2>
+    <h2>Present</h2>
 
-  <div class="project" onclick="toggleProject(this)">
-    <div class="proj-title">Compilers</div>
-    <div class="proj-content">
-      <p>Coming Soon...</p>
-    </div>
-  </div>
+    <div class="project" onclick="toggleProject(this)">
 
-  <div class="project" onclick="toggleProject(this)">
-    <div class="proj-title">Distributed Systems</div>
-    <div class="proj-content">
-      <p>Coming Soon...</p>
-    </div>
-  </div>
+      <div class="proj-title">Compilers</div>
 
-
-  <!-- 🔹 PAST PROJECTS -->
-  <h2>Past</h2>
-
-    <!-- 🔹 NLP CATEGORY -->
-  <div class="project" onclick="toggleProject(this)">
-    <div class="proj-title">Natural Language Processing</div>
-
-    <div class="proj-content">
-
-      <!-- SUB PROJECT -->
-      <div class="sub-project" onclick="toggleSub(event, this)">
-        <div class="sub-title">Language Identification System</div>
-
-        <div class="sub-content">
-          <p>
-      •	Developed a language identification model capable of automatically detecting 22 Indic languages from text written in both native scripts and romanized form.
-      <br>
-      •	Utilized a Transformer-based model to convert sentences into numerical embeddings for effective representation learning. <br>
-      •	Trained the model to align embeddings of native and romanized text of the same language, improving cross-script understanding. <br>
-      •	Further fine-tuned the model to classify sentences into one of the 22 Indic languages with high accuracy. <br>
-
-    </p>
-        </div>
+      <div class="proj-content">
+        <p>Coming Soon...</p>
       </div>
 
     </div>
-  </div>
 
-</section>
+    <div class="project" onclick="toggleProject(this)">
 
-<!-- Experience and  TEACHING -->
-<section id="teaching" class="tab">
+      <div class="proj-title">Distributed Systems</div>
 
-  <h1>Subject Matter Expert</h1>
+      <div class="proj-content">
+        <p>Coming Soon...</p>
+      </div>
 
-  <div class="achievement" onclick="toggleAch(this)">
-    <div class="ach-title">GeeksforGeeks – GATE Computer Science</div>
-    <div class="ach-content">
-      <p>
-        Framing questions for test series and daily problem solving, helping students
-        understand concepts through practice in Computer Architecture and Compiler Design.
-      </p>
     </div>
-  </div>
 
-  <h1>Teaching Assistant</h1>
+    <h2>Past</h2>
 
-  <div class="achievement" onclick="toggleAch(this)">
-    <div class="ach-title">Courses Handled</div>
-    <div class="ach-content">
-      <p>ES119 : Principles of AI (Jan 2026 - April 2026)</p>
-      <p>ES242 : Data Structures and Algorithms (Aug 2025 - Nov 2025)</p>
+    <div class="project" onclick="toggleProject(this)">
+
+      <div class="proj-title">Natural Language Processing</div>
+
+      <div class="proj-content">
+
+        <div class="sub-project" onclick="toggleSub(event, this)">
+
+          <div class="sub-title">
+            Language Identification System
+          </div>
+
+          <div class="sub-content">
+
+            <p>
+              • Developed a language identification model capable of detecting 22 Indic languages.
+            </p>
+
+            <p>
+              • Used Transformer embeddings for representation learning.
+            </p>
+
+            <p>
+              • Trained alignment between native and romanized scripts.
+            </p>
+
+            <p>
+              • Fine-tuned for multilingual classification.
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
     </div>
-  </div>
 
-</section>
+  </section>
 
-  <!-- Achievements -->
-<section id="achievements" class="tab">
-  <h1>Achievements</h1>
+  <!-- ================================= -->
+  <!-- 🎓 TEACHING -->
+  <!-- ================================= -->
 
-  <div class="achievement" onclick="toggleAch(this)">
-    <div class="ach-title">JEE Main</div>
-    <div class="ach-content">
-      <p>JEE MAIN 2021 QUALIFIED</p>
+  <section id="teaching" class="tab">
+
+    <h1>Subject Matter Expert</h1>
+
+    <div class="achievement" onclick="toggleAch(this)">
+
+      <div class="ach-title">
+        GeeksforGeeks – GATE Computer Science
+      </div>
+
+      <div class="ach-content">
+
+        <p>
+          Framing questions for test series and daily problem solving.
+        </p>
+
+      </div>
+
     </div>
-  </div>
 
-  <div class="achievement" onclick="toggleAch(this)">
-    <div class="ach-title">GATE</div>
-    <div class="ach-content">
-      <p>GATE CSE 2024 : RANK 10545 , SCORE 418</p>
+    <h1>Teaching Assistant</h1>
+
+    <div class="achievement" onclick="toggleAch(this)">
+
+      <div class="ach-title">
+        Courses Handled
+      </div>
+
+      <div class="ach-content">
+
+        <p>
+          ES119 : Principles of AI (Jan 2026 - April 2026)
+        </p>
+
+        <p>
+          ES242 : Data Structures and Algorithms (Aug 2025 - Nov 2025)
+        </p>
+
+      </div>
+
     </div>
-    <div class="ach-content">
-      <p>GATE CSE 2025 : RANK 805 , SCORE 737</p>
+
+  </section>
+
+  <!-- ================================= -->
+  <!-- 🏆 ACHIEVEMENTS -->
+  <!-- ================================= -->
+
+  <section id="achievements" class="tab">
+
+    <h1>Achievements</h1>
+
+    <div class="achievement" onclick="toggleAch(this)">
+
+      <div class="ach-title">JEE Main</div>
+
+      <div class="ach-content">
+        <p>JEE MAIN 2021 QUALIFIED</p>
+      </div>
+
     </div>
-    <div class="ach-content">
-      <p>GATE CSE 2026 : RANK 1308 , SCORE 689</p>
+
+    <div class="achievement" onclick="toggleAch(this)">
+
+      <div class="ach-title">GATE</div>
+
+      <div class="ach-content">
+        <p>GATE CSE 2025 : AIR 805</p>
+      </div>
+
     </div>
-  </div>
 
-  <div class="achievement" onclick="toggleAch(this)">
-    <div class="ach-title">UGC NET</div>
-    <div class="ach-content">
-      <p>UGC NET COMPUTER SCIENCE AND APPLICATIONS (July 2025) : 99.88 PERCENTILE , UGC NET JRF AWARDED</p>
+  </section>
+
+  <!-- ================================= -->
+  <!-- 📄 CV -->
+  <!-- ================================= -->
+
+  <section id="cv" class="tab">
+
+    <h1>Curriculum Vitae</h1>
+
+    <div class="cv-container">
+
+      <iframe id="cvFrame" src="cv.pdf"></iframe>
+
+      <button id="fullscreenBtn">
+        ⛶
+      </button>
+
     </div>
-  </div>
 
-  <div class="achievement" onclick="toggleAch(this)">
-    <div class="ach-title">NPTEL COURSE</div>
-    <div class="ach-content">
-      <p>TOPPER IN COURSE LITERATURE AND LIFE : TOP 5%</p>
+  </section>
+
+  <!-- ================================= -->
+  <!-- ✉️ CONTACT -->
+  <!-- ================================= -->
+
+  <section id="contact" class="tab">
+
+    <h1>Contact</h1>
+
+    <div class="contact">
+
+      <a href="https://linkedin.com" target="_blank">
+        LinkedIn
+      </a>
+
+      <a href="mailto:shubham.k@iitgn.ac.in">
+        Email
+      </a>
+
     </div>
-  </div>
 
-</section>
+  </section>
 
+  <!-- JS -->
+  <script src="script.js"></script>
 
-<!-- CV -->
-<section id="cv" class="tab cv-section">
-  <h1>Curriculum Vitae</h1>
-
-  <div class="cv-container">
-    <iframe id="cvFrame" src="cv.pdf"></iframe>
-
-    <!-- Fullscreen Button -->
-    <button id="fullscreenBtn">⛶</button>
-  </div>
-
-</section>
-
-<!-- CONTACT -->
-<section id="contact" class="tab">
-  <h1>Contact</h1>
-
-  <div class="contact">
-
-    <!-- LinkedIn -->
-    <a href="https://www.linkedin.com/in/shubham-kumar-523208235?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank">
-      <svg width="24" height="24" viewBox="0 0 24 24">
-        <path fill="#0A66C2" d="M4.98 3.5C4.98 4.88 3.86 6 2.48 6S0 4.88 0 3.5 1.12 1 2.48 1 4.98 2.12 4.98 3.5zM.5 8h4v12h-4zM8 8h3.6v1.7h.05c.5-.9 1.7-1.8 3.5-1.8 3.8 0 4.5 2.5 4.5 5.7V20h-4v-5.5c0-1.3 0-3-1.9-3s-2.2 1.5-2.2 2.9V20H8z"/>
-      </svg>
-      LinkedIn
-    </a>
-    <br><br>
-    <!-- Email -->
-    <a href="mailto:shubham.k@iitgn.ac.in">
-      <svg width="24" height="24" viewBox="0 0 24 24">
-        <path fill="#EA4335" d="M12 13L2 6.76V18h20V6.76L12 13zm10-9H2c-1.1 0-2 .9-2 2v.01l12 7.49L24 6.01V6c0-1.1-.9-2-2-2z"/>
-      </svg>
-      Email
-    </a>
-
-  </div>
-</section>
-
-<script src="script.js"></script>
 </body>
-  
 </html>
