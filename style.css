@@ -21,7 +21,7 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: 0;
+  z-index: -1;
   background: black;
 }
 
@@ -33,11 +33,16 @@ body {
   position: fixed;
   width: 2px;
   height: 100px;
+
   background: linear-gradient(white, transparent);
+
   opacity: 0.8;
+
   transform: rotate(45deg);
+
   animation: shoot 4s linear infinite;
-  z-index: 1;
+
+  z-index: 0;
 }
 
 .shooting-star:nth-child(1) {
@@ -59,6 +64,7 @@ body {
 }
 
 @keyframes shoot {
+
   0% {
     transform: translate(0,0) rotate(45deg);
     opacity: 1;
@@ -68,6 +74,7 @@ body {
     transform: translate(500px,500px) rotate(45deg);
     opacity: 0;
   }
+
 }
 
 /* ================================= */
@@ -75,16 +82,28 @@ body {
 /* ================================= */
 
 .hamburger {
+
+  display: none;
+
   position: fixed;
-  top: 20px;
+
+  top: 15px;
   right: 20px;
-  z-index: 3000;
+
   font-size: 30px;
-  cursor: pointer;
+
   color: white;
-  background: rgba(0,0,0,0.6);
+
+  cursor: pointer;
+
+  z-index: 3000;
+
+  background: rgba(0,0,0,0.7);
+
   padding: 8px 14px;
+
   border-radius: 10px;
+
   backdrop-filter: blur(5px);
 }
 
@@ -93,38 +112,41 @@ body {
 /* ================================= */
 
 .side-menu {
+
   position: fixed;
+
   right: 15px;
   top: 50%;
-  transform: translateY(-50%) translateX(100px);
+
+  transform: translateY(-50%);
 
   display: flex;
   flex-direction: column;
+
   gap: 12px;
 
-  opacity: 0;
-  pointer-events: none;
-
-  transition: 0.4s;
   z-index: 2500;
 }
 
-.side-menu.show-menu {
-  opacity: 1;
-  pointer-events: auto;
-  transform: translateY(-50%) translateX(0);
-}
-
 .side-menu button {
+
   width: 48px;
   height: 48px;
+
   border-radius: 50%;
+
   border: none;
+
   background: rgba(0,119,204,0.9);
+
   color: white;
+
   font-size: 18px;
+
   cursor: pointer;
+
   transition: 0.3s;
+
   backdrop-filter: blur(6px);
 }
 
@@ -142,11 +164,15 @@ body {
 /* ================================= */
 
 section {
+
   position: relative;
+
   z-index: 2;
 
   padding: 40px;
+
   max-width: 1000px;
+
   margin: auto;
 }
 
@@ -160,8 +186,15 @@ section {
 }
 
 @keyframes fade {
-  from { opacity: 0; }
-  to { opacity: 1; }
+
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+
 }
 
 /* ================================= */
@@ -169,21 +202,33 @@ section {
 /* ================================= */
 
 .about-container {
+
   display: flex;
+
   align-items: center;
+
   justify-content: center;
+
   gap: 40px;
+
   margin-top: 60px;
+
   flex-wrap: wrap;
 }
 
 .image-card img {
+
   width: 220px;
   height: 220px;
+
   object-fit: cover;
+
   border-radius: 50%;
+
   border: 4px solid #00ff88;
+
   box-shadow: 0 0 20px rgba(0,255,136,0.5);
+
   transition: 0.3s;
 }
 
@@ -196,18 +241,24 @@ section {
 }
 
 .about-box {
+
   background: rgba(20,20,20,0.7);
+
   backdrop-filter: blur(6px);
 
   padding: 25px;
+
   border-radius: 20px;
+
   max-width: 600px;
 
   color: #ddd;
 }
 
 .about-box a {
+
   color: #00ff88;
+
   text-decoration: none;
 }
 
@@ -220,15 +271,21 @@ section {
 /* ================================= */
 
 .achievement {
+
   background: rgba(20,20,20,0.7);
+
   backdrop-filter: blur(6px);
 
   margin: 15px auto;
+
   padding: 15px;
+
   border-radius: 12px;
 
   max-width: 650px;
+
   cursor: pointer;
+
   transition: 0.3s;
 }
 
@@ -237,20 +294,29 @@ section {
 }
 
 .ach-title {
+
   font-weight: bold;
+
   font-size: 18px;
+
   color: #00ff88;
 }
 
 .ach-content {
+
   max-height: 0;
+
   overflow: hidden;
+
   transition: max-height 0.4s ease;
+
   color: #ccc;
 }
 
 .achievement.active .ach-content {
+
   max-height: 300px;
+
   margin-top: 10px;
 }
 
@@ -259,15 +325,21 @@ section {
 /* ================================= */
 
 .project {
+
   background: rgba(20,20,20,0.7);
+
   backdrop-filter: blur(6px);
 
   margin: 15px auto;
+
   padding: 15px;
+
   border-radius: 12px;
 
   max-width: 700px;
+
   cursor: pointer;
+
   transition: 0.3s;
 }
 
@@ -276,27 +348,40 @@ section {
 }
 
 .proj-title {
+
   font-weight: bold;
+
   font-size: 18px;
+
   color: #00ff88;
 }
 
 .proj-content {
+
   max-height: 0;
+
   overflow: hidden;
+
   transition: max-height 0.4s ease;
 }
 
 .project.active .proj-content {
+
   max-height: 1000px;
+
   margin-top: 10px;
 }
 
 .sub-project {
+
   margin-top: 10px;
+
   padding: 10px;
+
   border-radius: 10px;
+
   background: rgba(255,255,255,0.08);
+
   cursor: pointer;
 }
 
@@ -305,13 +390,18 @@ section {
 }
 
 .sub-content {
+
   max-height: 0;
+
   overflow: hidden;
+
   transition: max-height 0.4s ease;
 }
 
 .sub-project.active .sub-content {
+
   max-height: 300px;
+
   margin-top: 10px;
 }
 
@@ -320,12 +410,17 @@ section {
 /* ================================= */
 
 .card {
+
   background: rgba(20,20,20,0.7);
+
   backdrop-filter: blur(6px);
 
   padding: 15px;
+
   margin: 15px auto;
+
   border-radius: 12px;
+
   max-width: 650px;
 }
 
@@ -338,18 +433,25 @@ section {
 }
 
 .cv-container iframe {
+
   width: 100%;
+
   height: 700px;
+
   border: none;
+
   border-radius: 12px;
 }
 
 #fullscreenBtn {
+
   position: absolute;
+
   bottom: 15px;
   left: 15px;
 
   border: none;
+
   border-radius: 8px;
 
   padding: 10px 14px;
@@ -357,6 +459,7 @@ section {
   cursor: pointer;
 
   background: rgba(0,0,0,0.7);
+
   color: white;
 }
 
@@ -365,15 +468,22 @@ section {
 /* ================================= */
 
 .contact {
+
   display: flex;
+
   justify-content: center;
+
   gap: 30px;
+
   flex-wrap: wrap;
 }
 
 .contact a {
+
   display: flex;
+
   align-items: center;
+
   gap: 10px;
 
   padding: 12px 20px;
@@ -383,6 +493,7 @@ section {
   background: rgba(20,20,20,0.7);
 
   color: white;
+
   text-decoration: none;
 
   transition: 0.3s;
@@ -402,10 +513,47 @@ section {
 }
 
 /* ================================= */
-/* 📱 RESPONSIVE */
+/* 📱 MOBILE */
 /* ================================= */
 
 @media screen and (max-width: 768px) {
+
+  .hamburger {
+    display: block;
+  }
+
+  .side-menu {
+
+    top: 70px;
+
+    right: -250px;
+
+    transform: none;
+
+    background: rgba(0,0,0,0.95);
+
+    padding: 20px;
+
+    border-radius: 15px;
+
+    width: 200px;
+
+    transition: right 0.4s ease;
+  }
+
+  .side-menu.show {
+
+    right: 15px;
+  }
+
+  .side-menu button {
+
+    width: 100%;
+
+    height: 45px;
+
+    border-radius: 10px;
+  }
 
   section {
     padding: 20px;
@@ -421,30 +569,21 @@ section {
     height: 160px;
   }
 
-  .about-box {
-    width: 95%;
-  }
-
+  .about-box,
   .project,
   .achievement,
   .card {
     width: 95%;
   }
 
-  .side-menu button {
-    width: 42px;
-    height: 42px;
-    font-size: 16px;
-  }
-
-  .hamburger {
-    font-size: 24px;
-  }
-
   iframe {
     height: 70vh;
   }
 }
+
+/* ================================= */
+/* 📱 SMALL MOBILE */
+/* ================================= */
 
 @media screen and (max-width: 480px) {
 
@@ -461,79 +600,4 @@ section {
     height: 130px;
   }
 
-  .side-menu button {
-    width: 38px;
-    height: 38px;
-    font-size: 14px;
-  }
-}
-
-
-/* ================================= */
-/* 🍔 HAMBURGER MENU */
-/* ================================= */
-
-.hamburger {
-  display: none;
-  font-size: 28px;
-  cursor: pointer;
-  color: white;
-  z-index: 2000;
-}
-
-/* DESKTOP MENU */
-.side-menu {
-  position: fixed;
-  right: 15px;
-  top: 50%;
-  transform: translateY(-50%);
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  z-index: 1000;
-}
-
-/* MOBILE MENU */
-@media screen and (max-width: 768px) {
-
-  .hamburger {
-    display: block;
-    position: fixed;
-    top: 15px;
-    right: 20px;
-  }
-
-  .side-menu {
-
-    position: fixed;
-    top: 60px;
-    right: -100%;
-
-    width: 220px;
-    height: auto;
-
-    padding: 20px;
-
-    background: rgba(0,0,0,0.95);
-
-    border-radius: 15px;
-
-    flex-direction: column;
-
-    transition: 0.4s ease;
-
-    z-index: 1500;
-  }
-
-  /* SHOW MENU */
-  .side-menu.show {
-    right: 15px;
-  }
-
-  .side-menu button {
-    width: 100%;
-    height: 45px;
-    border-radius: 10px;
-    font-size: 16px;
-  }
 }
