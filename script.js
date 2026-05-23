@@ -120,3 +120,8 @@ window.addEventListener("resize", () => {
   canvas.width = window.innerWidth;
   canvas.height = window.innerHeight;
 });
+
+
+function toggleMenu() {
+  document.getElementById("sideMenu").classList.toggle("show-menu");
+}
