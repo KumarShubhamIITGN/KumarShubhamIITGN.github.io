@@ -1,824 +1,20 @@
+/* ================================= */
+/* 🌍 GLOBAL */
+/* ================================= */
+
 body {
   margin: 0;
-  font-family: Arial;
-  background: #f5f5f5;
-  transition: 0.3s;
-}
-
-/* NAVBAR */
-nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background: #222;
-  color: white;
-  padding: 15px 30px;
-}
-
-nav a {
-  margin: 0 10px;
-  cursor: pointer;
-  color: white;
-  text-decoration: none;
-}
-
-nav button {
-  margin-left: 10px;
-  cursor: pointer;
-}
-
-/* SECTIONS */
-section {
-  padding: 40px;
-  max-width: 900px;
-  margin: auto;
-}
-
-/* BIO */
-/* MAIN CONTAINER */
-.about-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 40px;
-  max-width: 1100px;
-  margin: 60px auto;
-}
-
-/* LEFT IMAGE CARD */
-.image-card img:hover {
-  transform: scale(1.05);
-  transition: 0.3s;
-}
-
-.image-card img {
-  width: 200px;
-  height: 200px;
-  object-fit: cover;
-  border-radius: 50%;
-  border: 4px solid #00e5ff;
-}
-
-/* RIGHT SIDE */
-.about-content h2 {
-  margin-bottom: 15px;
-}
-
-/* TEXT BOX */
-.about-box {
-  background: #f5f5f5;   /* light grey instead of black */
-  color: black;
-}
-
-/* LINKS */
-.about-box a {
-  color: #00e5ff;
-  text-decoration: none;
-}
-
-.about-box a:hover {
-  text-decoration: underline;
-}
-
-/* CARDS */
-.card {
-  background: white;
-  padding: 20px;
-  margin: 15px 0;
-  border-radius: 10px;
-  transition: 0.3s;
-}
-
-.card:hover {
-  transform: scale(1.03);
-}
-
-/* BUTTON */
-.btn {
+  font-family: Arial, sans-serif;
   background: black;
   color: white;
-  padding: 10px 15px;
-  text-decoration: none;
-  border-radius: 5px;
-}
-
-/* TAB SYSTEM */
-.tab {
-  display: none;
-  animation: fade 0.4s;
-}
-
-.tab.active {
-  display: block;
-}
-
-/* ANIMATION */
-@keyframes fade {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
-
-/* DARK MODE */
-.dark {
-  background: #121212;
-  color: white;
-}
-
-.dark .card {
-  background: #1e1e1e;
-}
-
-.contact {
-  display: flex;
-  justify-content: center;   /* center alignment */
-  gap: 30px;                 /* space between LinkedIn & Email */
-  margin-top: 30px;
-}
-
-.contact a {
-  display: flex;
-  align-items: center;
-  gap: 12px;                 /* space between icon and text */
-  padding: 12px 20px;        /* better button size */
-  border-radius: 10px;
-  background: white;
-  text-decoration: none;
-  color: black;
-  font-size: 16px;
-  transition: all 0.3s ease;
-}
-
-/* Hover effect */
-.contact a:hover {
-  transform: translateY(-3px);
-}
-
-/* Icon size fix */
-.contact svg {
-  width: 22px;
-  height: 22px;
-}
-
-/* Dark mode */
-.dark .contact a {
-  background: #1e1e1e;
-  color: white;
-}
-
-#achievements p {
-  margin: 12px 0;
-  font-size: 16px;
-}
-
-#themeToggle {
-  margin-left: 15px;
-  padding: 8px 14px;
-  border: none;
-  border-radius: 20px;
-  cursor: pointer;
-  background: white;
-  color: black;
-  font-weight: bold;
-}
-
-
-#achievements .card {
-  margin: 15px 0;
-  font-size: 16px;
-}
-.dark #themeToggle {
-  background: black;
-  color: white;
-}
-
-
-iframe {
-  border: none;
-  margin-top: 20px;
-  border-radius: 10px;
-}
-
-
-.cv-container {
-  position: relative;
-}
-
-/* PDF */
-.cv-container iframe {
-  width: 100%;
-  height: 600px;
-  border: none;
-}
-
-/* Fullscreen button */
-#fullscreenBtn {
-  position: absolute;
-  bottom: 15px;
-  left: 15px;
-  padding: 8px 12px;
-  font-size: 18px;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-  background: rgba(0,0,0,0.7);
-  color: white;
-}
-
-.bio img {
-  width: 160px;
-  border-radius: 50%;
-}
-
-.bio p {
-  max-width: 600px;
-}
-
-/* Hover effect */
-#fullscreenBtn:hover {
-  background: black;
-}
-
-.about-footer {
-  margin-top: 20px;
-  font-size: 14px;
-  color: #aaa;
-}
-
-/* layout */
-.about-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 40px;
-  max-width: 1100px;
-  margin: 60px auto;
-}
-
-/* image */
-.image-card img {
-  width: 200px;
-  height: 200px;
-  border-radius: 50%;
-  object-fit: cover;
-}
-
-/* text box */
-.about-box {
-  background: #1e1e1e;
-  padding: 20px;
-  border-radius: 12px;
-  color: #ddd;
-  max-width: 600px;
-}
-
-/* ✅ footer at bottom */
-.about-footer {
-  text-align: center;
-  margin-top: 40px;
-  font-size: 14px;
-  color: #aaa;
-}
-
-.about-footer p {
-  margin: 5px 0;
-}
-
-/* ABOUT PAGE COLOR THEME */
-#about .about-box a {
-  color: #00ff88;   /* green links */
-}
-
-#about .about-box a:hover {
-  color: #00cc6a;
-}
-
-/* optional: heading color */
-#about h2 {
-  color: #00ff88;
-}
-
-#about .image-card img {
-  border-radius: 50%;   /* circle */
-}
-
-#about .about-box {
-  border-radius: 20px;   /* more rounded */
-}
-
-#about .image-card img {
-  border: 4px solid #00ff88;
-  box-shadow: 0 0 15px rgba(0,255,136,0.5);
-}
-
-
-/* Achievement box */
-.achievement {
-  background: white;
-  margin: 15px auto;
-  padding: 15px;
-  border-radius: 12px;
-  max-width: 600px;
-  cursor: pointer;
+  overflow-x: hidden;
   transition: 0.3s;
 }
 
-/* Title */
-.ach-title {
-  font-weight: bold;
-  font-size: 18px;
-}
-
-/* Hidden content */
-.ach-content {
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.3s ease;
-}
-
-/* When active */
-.achievement.active .ach-content {
-  max-height: 100px;
-  margin-top: 10px;
-}
-
-
-/* DARK MODE FIX FOR ACHIEVEMENTS */
-.dark .achievement {
-  background: #1e1e1e;   /* dark card */
-  color: white;
-  border: 1px solid #333;
-}
-
-.dark .ach-title {
-  color: #00ff88;   /* highlight title */
-}
-
-.dark .ach-content {
-  color: #ccc;   /* readable text */
-}
-
-.dark .achievement:hover {
-  background: #2a2a2a;
-}
-
-/* PROJECT BOX */
-.project {
-  background: white;
-  margin: 15px auto;
-  padding: 15px;
-  border-radius: 12px;
-  max-width: 650px;
-  cursor: pointer;
-  transition: 0.3s;
-}
-
-/* TITLE */
-.proj-title {
-  font-weight: bold;
-  font-size: 18px;
-}
-
-/* HIDDEN CONTENT */
-.proj-content {
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.3s ease;
-}
-
-/* ACTIVE STATE */
-.project.active .proj-content {
-  max-height: 120px;
-  margin-top: 10px;
-}
-
-.dark .project {
-  background: #1e1e1e;
-  color: white;
-  border: 1px solid #333;
-}
-
-.dark .proj-title {
-  color: #00ff88;
-}
-
-.dark .proj-content {
-  color: #ccc;
-}
-
-.dark .project:hover {
-  background: #2a2a2a;
-}
-
-
-/* MAIN PROJECT */
-.project {
-  background: white;
-  margin: 15px auto;
-  padding: 15px;
-  border-radius: 12px;
-  max-width: 650px;
-  cursor: pointer;
-}
-
-/* TITLE */
-.proj-title {
-  font-weight: bold;
-  font-size: 18px;
-}
-
-/* COLLAPSE MAIN */
-.proj-content {
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.4s ease;
-}
-
-.project.active .proj-content {
-  max-height: 1000px;  /* big enough */
-  margin-top: 10px;
-}
-
-/* SUB PROJECT */
-.sub-project {
-  margin-top: 10px;
-  padding: 10px;
-  background: #f0f0f0;
-  border-radius: 8px;
-  cursor: pointer;
-}
-
-/* SUB TITLE */
-.sub-title {
-  font-weight: 600;
-}
-
-/* SUB CONTENT */
-.sub-content {
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.3s ease;
-}
-
-.sub-project.active .sub-content {
-  max-height: 200px;
-  margin-top: 8px;
-}
-.dark .project {
-  background: #1e1e1e;
-  color: white;
-}
-
-.dark .sub-project {
-  background: #2a2a2a;
-}
-
-.dark .sub-content {
-  color: #ccc;
-}
-
-/* ===== MOBILE RESPONSIVE ===== */
-@media (max-width: 768px) {
-
-  /* About section */
-  .about-container {
-    flex-direction: column;
-    text-align: center;
-    gap: 20px;
-  }
-
-  .about-box {
-    max-width: 90%;
-  }
-
-  .image-card img {
-    width: 150px;
-    height: 150px;
-  }
-
-  /* Projects & Achievements */
-  .project,
-  .achievement {
-    max-width: 90%;
-    font-size: 14px;
-  }
-
-  /* Headings */
-  h1 {
-    font-size: 22px;
-  }
-
-  h2 {
-    font-size: 18px;
-  }
-
-  /* Navbar (if horizontal) */
-  nav {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 10px;
-  }
-
-  nav button {
-    padding: 8px 12px;
-    font-size: 14px;
-  }
-
-}
-
-@media (max-width: 768px) {
-  body {
-    font-size: 15px;
-  }
-}
-
-/* light mode */
-.highlight {
-  color: #0077cc;
-  font-weight: bold;
-}
-
-/* dark mode */
-.dark .highlight {
-  color: #00ff88;
-}
-
-.dark .highlight {
-  color: #00ff88;
-  text-shadow: 0 0 5px rgba(0,255,136,0.5);
-}
-
-
-/* LIGHT MODE (optional improvement) */
-.card {
-  background: white;
-  color: black;
-  padding: 12px;
-  margin: 10px auto;
-  border-radius: 10px;
-  max-width: 600px;
-}
-
-/* 🌙 DARK MODE FIX */
-.dark .card {
-  background: #1e1e1e;
-  color: #00ff88;   /* 🔥 green text */
-  border: 1px solid #333;
-}
-.dark .card:hover {
-  background: #2a2a2a;
-}
-
-
-/* ===== MOBILE ALIGNMENT FIX ===== */
-@media (max-width: 768px) {
-
-  /* GENERAL PAGE */
-  body {
-    padding: 10px;
-  }
-
-  section {
-    width: 100%;
-    margin: 0 auto;
-  }
-
-  /* HEADINGS */
-  h1 {
-    text-align: center;
-    font-size: 22px;
-  }
-
-  /* ABOUT SECTION */
-  .about-container {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-
-  .about-box {
-    width: 100%;
-    max-width: 95%;
-  }
-
-  .image-card img {
-    width: 140px;
-    height: 140px;
-  }
-
-  /* PROJECTS + ACHIEVEMENTS + TEACHING */
-  .project,
-  .achievement,
-  .card {
-    width: 100%;
-    max-width: 95%;
-    margin: 10px auto;
-    text-align: left;
-  }
-
-  /* SUB PROJECT */
-  .sub-project {
-    width: 100%;
-  }
-
-  /* NAVBAR */
-  /*nav {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 8px;
-  }
-
-  nav button {
-    font-size: 13px;
-    padding: 6px 10px;
-  }*/
-
-  /* CONTACT ICONS */
-  .contact-icons {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-  }
-
-  /* CV iframe */
-  iframe {
-    width: 100%;
-    height: 70vh;
-  }
-
-}
-/* FLOATING SIDE MENU */
-.side-menu {
-  position: fixed;
-  right: 15px;
-  top: 50%;
-  transform: translateY(-50%);
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  z-index: 1000;
-}
-
-/* BUTTON STYLE */
-.side-menu button {
-  width: 45px;
-  height: 45px;
-  border-radius: 50%;
-  border: none;
-  background: #0077cc;
-  color: white;
-  font-size: 18px;
-  cursor: pointer;
-  transition: 0.3s;
-}
-
-/* HOVER */
-.side-menu button:hover {
-  transform: scale(1.1);
-}
-
-/* DARK MODE */
-.dark .side-menu button {
-  background: #00ff88;
-  color: black;
-}
-
-/* Make toggle stand out slightly */
-#themeToggle {
-  border: 2px solid white;
-}
-
-.dark #themeToggle {
-  border: 2px solid black;
-}
-
 /* ================================= */
-/* 💻 DESKTOP (DEFAULT) */
-/* ================================= */
-
-body {
-  font-size: 16px;
-}
-
-
-/* ================================= */
-/* 📟 TABLET MODE */
-/* ================================= */
-
-@media screen and (max-width: 1024px) {
-
-  .about-container {
-    flex-direction: column;
-    text-align: center;
-    gap: 25px;
-  }
-
-  .about-box {
-    width: 90%;
-  }
-
-  .project,
-  .achievement,
-  .card {
-    width: 90%;
-  }
-
-  .side-menu {
-    right: 10px;
-  }
-}
-
-
-/* ================================= */
-/* 📱 MOBILE MODE */
-/* ================================= */
-
-@media screen and (max-width: 768px) {
-
-  body {
-    font-size: 14px;
-    padding: 10px;
-  }
-
-  section {
-    padding: 20px;
-  }
-
-  .about-container {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-
-  .image-card img {
-    width: 140px;
-    height: 140px;
-  }
-
-  .about-box {
-    width: 95%;
-    padding: 15px;
-  }
-
-  .project,
-  .achievement,
-  .card {
-    width: 95%;
-    font-size: 14px;
-  }
-
-  .sub-project {
-    width: 100%;
-  }
-
-  iframe {
-    width: 100%;
-    height: 70vh;
-  }
-
-  /* Floating menu smaller */
-  .side-menu {
-    right: 8px;
-    gap: 8px;
-  }
-
-  .side-menu button {
-    width: 40px;
-    height: 40px;
-    font-size: 16px;
-  }
-}
-
-
-/* ================================= */
-/* 📱 SMALL MOBILE */
-/* ================================= */
-
-@media screen and (max-width: 480px) {
-
-  h1 {
-    font-size: 20px;
-  }
-
-  h2 {
-    font-size: 18px;
-  }
-
-  .image-card img {
-    width: 120px;
-    height: 120px;
-  }
-
-  .side-menu button {
-    width: 36px;
-    height: 36px;
-    font-size: 14px;
-  }
-
-}
-
 /* 🌌 SPACE BACKGROUND */
+/* ================================= */
+
 #space {
   position: fixed;
   top: 0;
@@ -829,23 +25,445 @@ body {
   background: black;
 }
 
-/* Transparent sections */
-nav,
-section,
-.side-menu,
-.about-box,
-.project,
-.achievement,
-.card {
-  position: relative;
-  z-index: 2;
+/* ================================= */
+/* ☄️ SHOOTING STARS */
+/* ================================= */
+
+.shooting-star {
+  position: fixed;
+  width: 2px;
+  height: 100px;
+  background: linear-gradient(white, transparent);
+  opacity: 0.8;
+  transform: rotate(45deg);
+  animation: shoot 4s linear infinite;
+  z-index: 1;
 }
 
-/* Optional glass effect */
-.about-box,
-.project,
-.achievement,
+.shooting-star:nth-child(1) {
+  top: 10%;
+  left: 20%;
+  animation-delay: 0s;
+}
+
+.shooting-star:nth-child(2) {
+  top: 30%;
+  left: 70%;
+  animation-delay: 2s;
+}
+
+.shooting-star:nth-child(3) {
+  top: 60%;
+  left: 40%;
+  animation-delay: 4s;
+}
+
+@keyframes shoot {
+  0% {
+    transform: translate(0,0) rotate(45deg);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translate(500px,500px) rotate(45deg);
+    opacity: 0;
+  }
+}
+
+/* ================================= */
+/* 🍔 HAMBURGER */
+/* ================================= */
+
+.hamburger {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 3000;
+  font-size: 30px;
+  cursor: pointer;
+  color: white;
+  background: rgba(0,0,0,0.6);
+  padding: 8px 14px;
+  border-radius: 10px;
+  backdrop-filter: blur(5px);
+}
+
+/* ================================= */
+/* 📱 SIDE MENU */
+/* ================================= */
+
+.side-menu {
+  position: fixed;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%) translateX(100px);
+
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+
+  opacity: 0;
+  pointer-events: none;
+
+  transition: 0.4s;
+  z-index: 2500;
+}
+
+.side-menu.show-menu {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(-50%) translateX(0);
+}
+
+.side-menu button {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(0,119,204,0.9);
+  color: white;
+  font-size: 18px;
+  cursor: pointer;
+  transition: 0.3s;
+  backdrop-filter: blur(6px);
+}
+
+.side-menu button:hover {
+  transform: scale(1.1);
+}
+
+.dark .side-menu button {
+  background: rgba(0,255,136,0.9);
+  color: black;
+}
+
+/* ================================= */
+/* 📑 SECTIONS */
+/* ================================= */
+
+section {
+  position: relative;
+  z-index: 2;
+
+  padding: 40px;
+  max-width: 1000px;
+  margin: auto;
+}
+
+.tab {
+  display: none;
+  animation: fade 0.4s;
+}
+
+.tab.active {
+  display: block;
+}
+
+@keyframes fade {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* ================================= */
+/* 👤 ABOUT */
+/* ================================= */
+
+.about-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  margin-top: 60px;
+  flex-wrap: wrap;
+}
+
+.image-card img {
+  width: 220px;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 4px solid #00ff88;
+  box-shadow: 0 0 20px rgba(0,255,136,0.5);
+  transition: 0.3s;
+}
+
+.image-card img:hover {
+  transform: scale(1.05);
+}
+
+.about-content h2 {
+  color: #00ff88;
+}
+
+.about-box {
+  background: rgba(20,20,20,0.7);
+  backdrop-filter: blur(6px);
+
+  padding: 25px;
+  border-radius: 20px;
+  max-width: 600px;
+
+  color: #ddd;
+}
+
+.about-box a {
+  color: #00ff88;
+  text-decoration: none;
+}
+
+.about-box a:hover {
+  color: #00cc6a;
+}
+
+/* ================================= */
+/* 🏆 ACHIEVEMENTS */
+/* ================================= */
+
+.achievement {
+  background: rgba(20,20,20,0.7);
+  backdrop-filter: blur(6px);
+
+  margin: 15px auto;
+  padding: 15px;
+  border-radius: 12px;
+
+  max-width: 650px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.achievement:hover {
+  transform: scale(1.02);
+}
+
+.ach-title {
+  font-weight: bold;
+  font-size: 18px;
+  color: #00ff88;
+}
+
+.ach-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease;
+  color: #ccc;
+}
+
+.achievement.active .ach-content {
+  max-height: 300px;
+  margin-top: 10px;
+}
+
+/* ================================= */
+/* 💻 PROJECTS */
+/* ================================= */
+
+.project {
+  background: rgba(20,20,20,0.7);
+  backdrop-filter: blur(6px);
+
+  margin: 15px auto;
+  padding: 15px;
+  border-radius: 12px;
+
+  max-width: 700px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.project:hover {
+  transform: scale(1.02);
+}
+
+.proj-title {
+  font-weight: bold;
+  font-size: 18px;
+  color: #00ff88;
+}
+
+.proj-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease;
+}
+
+.project.active .proj-content {
+  max-height: 1000px;
+  margin-top: 10px;
+}
+
+.sub-project {
+  margin-top: 10px;
+  padding: 10px;
+  border-radius: 10px;
+  background: rgba(255,255,255,0.08);
+  cursor: pointer;
+}
+
+.sub-title {
+  font-weight: bold;
+}
+
+.sub-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease;
+}
+
+.sub-project.active .sub-content {
+  max-height: 300px;
+  margin-top: 10px;
+}
+
+/* ================================= */
+/* 🎓 CARDS */
+/* ================================= */
+
 .card {
   background: rgba(20,20,20,0.7);
   backdrop-filter: blur(6px);
+
+  padding: 15px;
+  margin: 15px auto;
+  border-radius: 12px;
+  max-width: 650px;
+}
+
+/* ================================= */
+/* 📄 CV */
+/* ================================= */
+
+.cv-container {
+  position: relative;
+}
+
+.cv-container iframe {
+  width: 100%;
+  height: 700px;
+  border: none;
+  border-radius: 12px;
+}
+
+#fullscreenBtn {
+  position: absolute;
+  bottom: 15px;
+  left: 15px;
+
+  border: none;
+  border-radius: 8px;
+
+  padding: 10px 14px;
+
+  cursor: pointer;
+
+  background: rgba(0,0,0,0.7);
+  color: white;
+}
+
+/* ================================= */
+/* ✉️ CONTACT */
+/* ================================= */
+
+.contact {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.contact a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  padding: 12px 20px;
+
+  border-radius: 10px;
+
+  background: rgba(20,20,20,0.7);
+
+  color: white;
+  text-decoration: none;
+
+  transition: 0.3s;
+}
+
+.contact a:hover {
+  transform: translateY(-5px);
+}
+
+/* ================================= */
+/* 🌙 DARK MODE */
+/* ================================= */
+
+.dark {
+  background: #121212;
+  color: white;
+}
+
+/* ================================= */
+/* 📱 RESPONSIVE */
+/* ================================= */
+
+@media screen and (max-width: 768px) {
+
+  section {
+    padding: 20px;
+  }
+
+  .about-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .image-card img {
+    width: 160px;
+    height: 160px;
+  }
+
+  .about-box {
+    width: 95%;
+  }
+
+  .project,
+  .achievement,
+  .card {
+    width: 95%;
+  }
+
+  .side-menu button {
+    width: 42px;
+    height: 42px;
+    font-size: 16px;
+  }
+
+  .hamburger {
+    font-size: 24px;
+  }
+
+  iframe {
+    height: 70vh;
+  }
+}
+
+@media screen and (max-width: 480px) {
+
+  h1 {
+    font-size: 22px;
+  }
+
+  h2 {
+    font-size: 18px;
+  }
+
+  .image-card img {
+    width: 130px;
+    height: 130px;
+  }
+
+  .side-menu button {
+    width: 38px;
+    height: 38px;
+    font-size: 14px;
+  }
 }
