@@ -71,7 +71,7 @@ function toggleSub(event, element) {
   element.classList.toggle("active");
 }
 
-// 🌌 SPACE BACKGROUND ANIMATION
+// 🌌 SPACE BACKGROUND
 
 const canvas = document.getElementById("space");
 const ctx = canvas.getContext("2d");
@@ -80,7 +80,9 @@ canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 
 let stars = [];
+let shootingStars = [];
 
+// ⭐ NORMAL STARS
 for (let i = 0; i < 250; i++) {
   stars.push({
     x: Math.random() * canvas.width,
@@ -90,10 +92,27 @@ for (let i = 0; i < 250; i++) {
   });
 }
 
+// 🌠 SHOOTING STAR
+function createShootingStar() {
+
+  shootingStars.push({
+    x: Math.random() * canvas.width,
+    y: Math.random() * canvas.height / 2,
+    len: Math.random() * 80 + 50,
+    speed: Math.random() * 10 + 6,
+    size: Math.random() * 2 + 1
+  });
+
+}
+
+setInterval(createShootingStar, 2500);
+
+// 🎥 ANIMATION
 function animateStars() {
 
   ctx.clearRect(0, 0, canvas.width, canvas.height);
 
+  // NORMAL STARS
   ctx.fillStyle = "white";
 
   stars.forEach(star => {
@@ -111,17 +130,47 @@ function animateStars() {
 
   });
 
+  // SHOOTING STARS
+  shootingStars.forEach((s, index) => {
+
+    ctx.beginPath();
+
+    let gradient = ctx.createLinearGradient(
+      s.x,
+      s.y,
+      s.x - s.len,
+      s.y - s.len
+    );
+
+    gradient.addColorStop(0, "white");
+    gradient.addColorStop(1, "transparent");
+
+    ctx.strokeStyle = gradient;
+    ctx.lineWidth = s.size;
+
+    ctx.moveTo(s.x, s.y);
+    ctx.lineTo(s.x - s.len, s.y - s.len);
+
+    ctx.stroke();
+
+    s.x += s.speed;
+    s.y += s.speed;
+
+    if (s.x > canvas.width || s.y > canvas.height) {
+      shootingStars.splice(index, 1);
+    }
+
+  });
+
   requestAnimationFrame(animateStars);
 }
 
 animateStars();
 
+// 📱 RESIZE FIX
 window.addEventListener("resize", () => {
+
   canvas.width = window.innerWidth;
   canvas.height = window.innerHeight;
+
 });
-
-
-function toggleMenu() {
-  document.getElementById("sideMenu").classList.toggle("show-menu");
-}
