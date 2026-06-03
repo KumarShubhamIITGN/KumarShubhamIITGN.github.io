@@ -27,13 +27,14 @@ body.dark {
 /* ================================= */
 
 #space {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: -1;
-  background: transparent;
+  z-index: 0;
+}
+
+nav,
+section,
+.side-menu {
+  position: relative;
+  z-index: 2;
 }
 
 /* ================================= */
@@ -619,19 +620,17 @@ body {
   color: black;
 }
 
+/* LIGHT */
+
 .about-box,
 .project,
 .achievement,
 .card {
-  background: rgba(255,255,255,0.9);
+  background: rgba(255,255,255,0.85);
   color: black;
 }
 
-/* DARK MODE */
-body.dark {
-  background: #000;
-  color: white;
-}
+/* DARK */
 
 body.dark .about-box,
 body.dark .project,
@@ -640,7 +639,6 @@ body.dark .card {
   background: rgba(20,20,20,0.8);
   color: white;
 }
-
 /* Hamburger */
 .hamburger {
   color: black;
