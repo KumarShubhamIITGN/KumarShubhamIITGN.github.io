@@ -612,3 +612,40 @@ section {
   }
 
 }
+
+/* LIGHT MODE */
+body {
+  background: #f5f5f5;
+  color: black;
+}
+
+.about-box,
+.project,
+.achievement,
+.card {
+  background: rgba(255,255,255,0.9);
+  color: black;
+}
+
+/* DARK MODE */
+body.dark {
+  background: #000;
+  color: white;
+}
+
+body.dark .about-box,
+body.dark .project,
+body.dark .achievement,
+body.dark .card {
+  background: rgba(20,20,20,0.8);
+  color: white;
+}
+
+/* Hamburger */
+.hamburger {
+  color: black;
+}
+
+body.dark .hamburger {
+  color: white;
+}
