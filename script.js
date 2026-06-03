@@ -23,66 +23,47 @@ function showTab(tabId) {
 // 🚀 RUN AFTER PAGE LOAD
 // =====================================
 
-document.addEventListener("DOMContentLoaded", function () {
-
- document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", () => {
 
   const btn = document.getElementById("themeToggle");
 
-  /* ================================= */
-  /* 🌙 DEFAULT DARK MODE */
-  /* ================================= */
-
   let savedTheme = localStorage.getItem("theme");
 
-  // DEFAULT = DARK
+  // Default = DARK
   if (!savedTheme) {
     savedTheme = "dark";
     localStorage.setItem("theme", "dark");
   }
 
-  // APPLY SAVED THEME
   if (savedTheme === "dark") {
 
     document.body.classList.add("dark");
 
-    if (btn) {
-      btn.textContent = "☀️";
-    }
+    if (btn) btn.textContent = "☀️";
 
   } else {
 
     document.body.classList.remove("dark");
 
-    if (btn) {
-      btn.textContent = "🌙";
-    }
+    if (btn) btn.textContent = "🌙";
+
   }
 
-  /* ================================= */
-  /* 🔄 TOGGLE THEME */
-  /* ================================= */
-
+  // Theme Toggle
   if (btn) {
 
     btn.addEventListener("click", () => {
 
       document.body.classList.toggle("dark");
 
-      // IF DARK
       if (document.body.classList.contains("dark")) {
 
         localStorage.setItem("theme", "dark");
-
         btn.textContent = "☀️";
 
-      }
-
-      // IF LIGHT
-      else {
+      } else {
 
         localStorage.setItem("theme", "light");
-
         btn.textContent = "🌙";
 
       }
@@ -92,7 +73,6 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
 });
-
 
   // =====================================
   // 👁️ VISITOR COUNTER
