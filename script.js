@@ -4,67 +4,80 @@
 
 function showTab(tabId) {
 
-  let tabs = document.querySelectorAll('.tab');
-
-  tabs.forEach(tab => {
-    tab.classList.remove('active');
+  document.querySelectorAll(".tab").forEach(tab => {
+    tab.classList.remove("active");
   });
 
-  const activeTab = document.getElementById(tabId);
+  const target = document.getElementById(tabId);
 
-  if (activeTab) {
-    activeTab.classList.add('active');
+  if (target) {
+    target.classList.add("active");
   }
 
+  // Close mobile menu after click
+  const sideMenu = document.getElementById("sideMenu");
+
+  if (window.innerWidth <= 768 && sideMenu) {
+    sideMenu.classList.remove("show");
+  }
 }
 
 
 // =====================================
-// 🚀 RUN AFTER PAGE LOAD
+// 🚀 PAGE LOAD
 // =====================================
 
 document.addEventListener("DOMContentLoaded", () => {
 
-  const btn = document.getElementById("themeToggle");
+  // =====================================
+  // 🌙 THEME TOGGLE
+  // =====================================
+
+  const themeBtn = document.getElementById("themeToggle");
 
   let savedTheme = localStorage.getItem("theme");
 
   // Default = DARK
   if (!savedTheme) {
+
     savedTheme = "dark";
     localStorage.setItem("theme", "dark");
+
   }
 
   if (savedTheme === "dark") {
 
     document.body.classList.add("dark");
 
-    if (btn) btn.textContent = "☀️";
+    if (themeBtn) {
+      themeBtn.textContent = "☀️";
+    }
 
   } else {
 
     document.body.classList.remove("dark");
 
-    if (btn) btn.textContent = "🌙";
+    if (themeBtn) {
+      themeBtn.textContent = "🌙";
+    }
 
   }
 
-  // Theme Toggle
-  if (btn) {
+  if (themeBtn) {
 
-    btn.addEventListener("click", () => {
+    themeBtn.addEventListener("click", () => {
 
       document.body.classList.toggle("dark");
 
       if (document.body.classList.contains("dark")) {
 
         localStorage.setItem("theme", "dark");
-        btn.textContent = "☀️";
+        themeBtn.textContent = "☀️";
 
       } else {
 
         localStorage.setItem("theme", "light");
-        btn.textContent = "🌙";
+        themeBtn.textContent = "🌙";
 
       }
 
@@ -72,7 +85,22 @@ document.addEventListener("DOMContentLoaded", () => {
 
   }
 
-});
+  // =====================================
+  // 🍔 HAMBURGER MENU
+  // =====================================
+
+  const hamburger = document.getElementById("hamburger");
+  const sideMenu = document.getElementById("sideMenu");
+
+  if (hamburger && sideMenu) {
+
+    hamburger.addEventListener("click", () => {
+
+      sideMenu.classList.toggle("show");
+
+    });
+
+  }
 
   // =====================================
   // 👁️ VISITOR COUNTER
@@ -99,29 +127,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
     });
 
-
-  // =====================================
-  // 🍔 HAMBURGER MENU
-  // =====================================
-
-  const hamburger = document.getElementById("hamburger");
-  const sideMenu = document.getElementById("sideMenu");
-
-  if (hamburger && sideMenu) {
-
-    hamburger.addEventListener("click", () => {
-
-      sideMenu.classList.toggle("show");
-
-    });
-
-  }
-
 });
 
 
 // =====================================
-// 🏆 ACHIEVEMENT TOGGLE
+// 🏆 ACHIEVEMENTS
 // =====================================
 
 function toggleAch(element) {
@@ -132,7 +142,7 @@ function toggleAch(element) {
 
 
 // =====================================
-// 💻 PROJECT TOGGLE
+// 💻 PROJECTS
 // =====================================
 
 function toggleProject(element) {
@@ -143,7 +153,7 @@ function toggleProject(element) {
 
 
 // =====================================
-// 📂 SUB PROJECT TOGGLE
+// 📂 SUB PROJECTS
 // =====================================
 
 function toggleSub(event, element) {
@@ -165,15 +175,19 @@ if (canvas) {
 
   const ctx = canvas.getContext("2d");
 
-  canvas.width = window.innerWidth;
-  canvas.height = window.innerHeight;
+  function resizeCanvas() {
+
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+
+  }
+
+  resizeCanvas();
 
   let stars = [];
   let shootingStars = [];
 
-  // =====================================
-  // ⭐ CREATE NORMAL STARS
-  // =====================================
+  // Stars
 
   for (let i = 0; i < 250; i++) {
 
@@ -190,10 +204,7 @@ if (canvas) {
 
   }
 
-
-  // =====================================
-  // 🌠 CREATE SHOOTING STAR
-  // =====================================
+  // Shooting stars
 
   function createShootingStar() {
 
@@ -215,19 +226,9 @@ if (canvas) {
 
   setInterval(createShootingStar, 2500);
 
-
-  // =====================================
-  // 🎥 ANIMATION LOOP
-  // =====================================
-
   function animateStars() {
 
     ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-
-    // =====================================
-    // ⭐ NORMAL STARS
-    // =====================================
 
     ctx.fillStyle = "white";
 
@@ -250,23 +251,15 @@ if (canvas) {
       if (star.y > canvas.height) {
 
         star.y = 0;
-
         star.x = Math.random() * canvas.width;
 
       }
 
     });
 
-
-    // =====================================
-    // 🌠 SHOOTING STARS
-    // =====================================
-
     shootingStars.forEach((s, index) => {
 
-      ctx.beginPath();
-
-      let gradient = ctx.createLinearGradient(
+      const gradient = ctx.createLinearGradient(
         s.x,
         s.y,
         s.x - s.len,
@@ -275,6 +268,8 @@ if (canvas) {
 
       gradient.addColorStop(0, "white");
       gradient.addColorStop(1, "transparent");
+
+      ctx.beginPath();
 
       ctx.strokeStyle = gradient;
 
@@ -292,7 +287,6 @@ if (canvas) {
       s.x += s.speed;
       s.y += s.speed;
 
-      // REMOVE WHEN OUTSIDE SCREEN
       if (
         s.x > canvas.width ||
         s.y > canvas.height
@@ -310,16 +304,6 @@ if (canvas) {
 
   animateStars();
 
-
-  // =====================================
-  // 📱 RESIZE FIX
-  // =====================================
-
-  window.addEventListener("resize", () => {
-
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-
-  });
+  window.addEventListener("resize", resizeCanvas);
 
 }
