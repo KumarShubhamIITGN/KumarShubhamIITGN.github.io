@@ -1,317 +1,586 @@
 <!DOCTYPE html>
-<html>
+<html lang="en" data-theme="dark">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shubham Kumar</title>
+<meta name="description" content="Shubham Kumar — M.Tech CSE, IIT Gandhinagar. Compilers, Distributed Systems, Programming Languages.">
 
-  <title>WELCOME TO MY WEBPAGE | Portfolio</title>
+<!-- ============================================================
+     FONTS
+     Fraunces  -> display face, used ONLY for the name / big reveal
+     Inter     -> body text
+     IBM Plex Mono -> years, "// comment" section labels, stack frames
+     ============================================================ -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;1,9..144,500&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="style.css">
+<style>
+  /* =====================================================
+     DESIGN TOKENS
+     ===================================================== */
+  :root[data-theme="dark"]{
+    --bg: #0A0C10;
+    --bg-elevated: #12151C;
+    --bg-elevated-2: #171B24;
+    --text: #E7E5E1;
+    --text-muted: #838C99;
+    --accent: #FFB454;      /* terminal amber */
+    --accent-2: #5CC8C2;    /* stack-frame teal */
+    --border: #232833;
+    --shadow: rgba(0,0,0,0.45);
+  }
+  :root[data-theme="light"]{
+    --bg: #F6F5F2;
+    --bg-elevated: #FFFFFF;
+    --bg-elevated-2: #EFEDE8;
+    --text: #181A1F;
+    --text-muted: #6A6F78;
+    --accent: #B5750B;
+    --accent-2: #14807A;
+    --border: #DEDBD3;
+    --shadow: rgba(20,20,20,0.08);
+  }
+
+  *{ box-sizing: border-box; }
+  html{ scroll-behavior: smooth; }
+
+  body{
+    margin:0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+    transition: background .5s ease, color .5s ease;
+    overflow-x: hidden;
+  }
+
+  a{ color: var(--accent); text-decoration: none; }
+  a:hover{ text-decoration: underline; }
+
+  .wrap{
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 0 24px 80px;
+  }
+
+  /* faint circuit-dot backdrop, very low opacity, purely ambient */
+  .bg-grid{
+    position: fixed; inset:0; z-index:-1; pointer-events:none;
+    background-image: radial-gradient(var(--border) 1px, transparent 1px);
+    background-size: 28px 28px;
+    opacity: .35;
+  }
+
+  /* cursor spotlight (desktop only, added via JS) */
+  .spotlight{
+    position: fixed; inset:0; pointer-events:none; z-index:0;
+    background: radial-gradient(600px circle at var(--mx,50%) var(--my,50%), rgba(255,180,84,0.06), transparent 40%);
+    transition: background .1s ease;
+  }
+
+  /* =====================================================
+     BOOT / LOADER
+     ===================================================== */
+  #boot{
+    position: fixed; inset:0; background: var(--bg); z-index: 999;
+    display:flex; align-items:center; justify-content:center;
+    font-family:'IBM Plex Mono', monospace; color: var(--accent);
+    font-size: 14px; letter-spacing: .5px;
+    transition: opacity .5s ease;
+  }
+  #boot span{ opacity:.85; }
+  #boot .cursor{ display:inline-block; width:8px; height:1em; background:var(--accent); margin-left:4px; animation: blink 1s step-end infinite; vertical-align: -2px; }
+  @keyframes blink{ 50%{ opacity:0; } }
+
+  /* =====================================================
+     HEADER / NAV
+     ===================================================== */
+  header{
+    position: sticky; top:0; z-index: 50;
+    backdrop-filter: blur(10px);
+    background: color-mix(in srgb, var(--bg) 82%, transparent);
+    border-bottom: 1px solid var(--border);
+  }
+  .nav{
+    max-width: 760px; margin:0 auto; padding: 14px 24px;
+    display:flex; align-items:center; justify-content:space-between;
+  }
+  .logo{
+    font-family:'IBM Plex Mono', monospace; font-size:14px; color: var(--text-muted);
+  }
+  .logo b{ color: var(--text); }
+
+  .theme-toggle{
+    font-family:'IBM Plex Mono', monospace; font-size: 12px;
+    background: var(--bg-elevated); border:1px solid var(--border);
+    color: var(--text); padding: 6px 12px; border-radius: 999px;
+    cursor:pointer; display:flex; align-items:center; gap:8px;
+    transition: border-color .2s ease, transform .2s ease;
+  }
+  .theme-toggle:hover{ border-color: var(--accent); transform: translateY(-1px); }
+  .theme-toggle .dot{
+    width:8px; height:8px; border-radius:50%; background: var(--accent);
+    transition: background .3s ease;
+  }
+
+  /* =====================================================
+     HERO  (persists, always visible)
+     ===================================================== */
+  .hero{
+    padding: 72px 0 40px;
+    text-align:center;
+  }
+  .photo{
+    width: 132px; height: 132px; border-radius: 50%;
+    margin: 0 auto 28px;
+    background: var(--bg-elevated);
+    border: 1px solid var(--border);
+    box-shadow: 0 20px 40px var(--shadow);
+    object-fit: cover;
+    display:block;
+  }
+  .name{
+    font-family: 'Fraunces', serif;
+    font-weight: 600;
+    font-size: clamp(2.2rem, 6vw, 3.2rem);
+    letter-spacing: -0.01em;
+    margin: 0 0 10px;
+    min-height: 1.2em;
+  }
+  .name .cur{
+    display:inline-block; width:3px; height:.9em; background:var(--accent);
+    margin-left:4px; animation: blink 1s step-end infinite; vertical-align: -4px;
+  }
+  .tagline{
+    font-family:'IBM Plex Mono', monospace;
+    color: var(--text-muted); font-size: 14px;
+    max-width: 480px; margin: 0 auto;
+  }
+  .tagline .k{ color: var(--accent-2); }
+
+  /* =====================================================
+     ABOUT  (persists, always visible)
+     ===================================================== */
+  .comment-label{
+    font-family:'IBM Plex Mono', monospace;
+    font-size: 13px; color: var(--text-muted);
+    margin: 0 0 14px;
+  }
+  .comment-label .slashes{ color: var(--accent-2); }
+
+  .about-card{
+    background: var(--bg-elevated);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 28px 30px;
+    margin-bottom: 56px;
+  }
+  .about-card p{ margin: 0 0 14px; }
+  .about-card p:last-child{ margin-bottom:0; }
+
+  /* =====================================================
+     ACCORDION SECTIONS (Projects / Experience / Achievements / Contact)
+     ===================================================== */
+  .section{
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    margin-bottom: 20px;
+    overflow: hidden;
+    background: var(--bg-elevated);
+  }
+  .section-head{
+    display:flex; align-items:center; justify-content:space-between;
+    padding: 20px 26px;
+    cursor: pointer;
+    user-select:none;
+  }
+  .section-head:hover{ background: var(--bg-elevated-2); }
+  .section-head h2{
+    margin:0; font-size: 17px; font-weight:600;
+    display:flex; align-items:center; gap:10px;
+  }
+  .section-head h2 .tag{
+    font-family:'IBM Plex Mono', monospace; font-weight:400;
+    color: var(--accent-2); font-size: 14px;
+  }
+  .bracket{
+    font-family:'IBM Plex Mono', monospace;
+    color: var(--text-muted); font-size: 15px;
+    transition: transform .35s ease, color .2s ease;
+  }
+  .section.open .bracket{ transform: rotate(180deg); color: var(--accent); }
+
+  .section-body{
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height .5s cubic-bezier(.4,0,.2,1);
+    padding: 0 26px;
+  }
+  .section.open .section-body{
+    padding: 0 26px 26px;
+  }
+
+  /* =====================================================
+     STACK (call-stack timeline: bottom-up, newest on top)
+     Add new frames at the END of the markup — they'll visually
+     land on TOP, like pushing a new frame onto a call stack.
+     ===================================================== */
+  .stack{
+    display:flex;
+    flex-direction: column-reverse; /* DOM order = oldest..newest, visual = newest on top */
+    gap: 14px;
+  }
+  .frame{
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--accent-2);
+    border-radius: 8px;
+    padding: 16px 18px;
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity .6s ease, transform .6s ease;
+  }
+  .frame.in{ opacity: 1; transform: translateY(0); }
+  .frame-year{
+    font-family:'IBM Plex Mono', monospace;
+    font-size: 12px; color: var(--accent);
+    background: color-mix(in srgb, var(--accent) 14%, transparent);
+    padding: 2px 8px; border-radius: 4px;
+    display:inline-block; margin-bottom:8px;
+  }
+  .frame-title{ margin: 0 0 6px; font-size: 15px; font-weight:600; }
+  .frame-desc{ margin:0; color: var(--text-muted); font-size: 14px; }
+
+  /* small utility button (CV download etc.) */
+  .btn{
+    display:inline-flex; align-items:center; gap:8px;
+    font-family:'IBM Plex Mono', monospace; font-size: 13px;
+    border:1px solid var(--border); background: var(--bg);
+    color: var(--text); padding: 9px 16px; border-radius: 999px;
+    cursor:pointer; transition: border-color .2s ease, transform .2s ease;
+  }
+  .btn:hover{ border-color: var(--accent); transform: translateY(-1px); text-decoration:none; }
+
+  .contact-row{
+    display:flex; flex-wrap:wrap; gap:12px; margin-top: 4px;
+  }
+
+  footer{
+    text-align:center;
+    padding: 60px 24px 40px;
+    color: var(--text-muted);
+    font-family:'IBM Plex Mono', monospace;
+    font-size: 13px;
+  }
+  footer .slashes{ color: var(--accent-2); }
+
+  /* reduced motion: kill everything non-essential */
+  @media (prefers-reduced-motion: reduce){
+    *{ animation: none !important; transition: none !important; }
+    .frame{ opacity:1; transform:none; }
+  }
+
+  /* mobile tightening */
+  @media (max-width: 560px){
+    .hero{ padding: 52px 0 28px; }
+    .about-card{ padding: 22px 20px; }
+    .section-head{ padding: 16px 18px; }
+    .section.open .section-body{ padding: 0 18px 20px; }
+  }
+</style>
 </head>
-
 <body>
 
-  <!-- 🌌 SPACE BACKGROUND -->
-  <canvas id="space"></canvas>
+<!-- boot sequence, purely cosmetic, removes itself after ~1s -->
+<div id="boot"><span id="boot-text">$ compiling profile...</span><span class="cursor"></span></div>
 
-  <!-- ================================= -->
-  <!-- 🍔 NAVBAR -->
-  <!-- ================================= -->
+<div class="bg-grid"></div>
+<div class="spotlight" id="spotlight"></div>
 
-  <nav>
-
-    <h2 class="logo">It'z Shubham !!</h2>
-
-    <!-- 🍔 Hamburger -->
-    <div class="hamburger" id="hamburger">
-      ☰
-    </div>
-
-    <!-- 📱 SIDE MENU -->
-    <div class="side-menu" id="sideMenu">
-
-      <button onclick="showTab('about')">🧑</button>
-
-      <button onclick="showTab('projects')">💻</button>
-
-      <button onclick="showTab('teaching')">🎓</button>
-
-      <button onclick="showTab('achievements')">🏆</button>
-
-      <button onclick="showTab('cv')">📄</button>
-
-      <button onclick="showTab('contact')">✉️</button>
-
-      <button id="themeToggle">🌙</button>
-
-    </div>
-
+<header>
+  <nav class="nav">
+    <div class="logo"><b>SK</b> / index</div>
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle light and dark mode">
+      <span class="dot" id="themeDot"></span>
+      <span id="themeLabel">dark</span>
+    </button>
   </nav>
+</header>
 
-  <!-- ================================= -->
-  <!-- 👤 ABOUT -->
-  <!-- ================================= -->
+<div class="wrap">
 
-  <section id="about" class="tab active">
+  <!-- =========================================================
+       HERO — always visible. Replace src below with your photo.
+       ========================================================= -->
+  <section class="hero">
+    <!-- TODO: replace src with your actual photo path, e.g. "assets/photo.jpg" -->
+    <img class="photo" src="https://placehold.co/264x264/12151C/838C99?text=photo" alt="Shubham Kumar">
+    <h1 class="name" id="nameReveal">Shubham Kumar<span class="cur"></span></h1>
+    <p class="tagline"><span class="k">M.Tech</span> Computer Systems @ IIT Gandhinagar</p>
+  </section>
 
-    <div class="about-container">
+  <!-- =========================================================
+       ABOUT — always visible, content kept as you wrote it.
+       ========================================================= -->
+  <p class="comment-label"><span class="slashes">//</span> about</p>
+  <div class="about-card">
+    <p>I am Shubham Kumar, a M.Tech student in Computer Science and Engg. (Computer Systems) at <a href="https://www.iitgn.ac.in/" target="_blank" rel="noopener">IIT Gandhinagar</a>, working under the supervision of <a href="https://abhishek.people.iitgn.ac.in/" target="_blank" rel="noopener">Prof. Abhishek Bichhawat</a>.</p>
+    <p>Prior to this, I completed my B.Tech in Computer Science and Engg. at <a href="https://mgcub.ac.in/" target="_blank" rel="noopener">Mahatma Gandhi Central University, Bihar</a>.</p>
+    <p>I am currently a member of the <a href="https://iitgn-fuss.github.io/" target="_blank" rel="noopener">FUSS Research Group</a>.</p>
+    <p>Alongside my academic work, I serve as a Teaching Assistant for undergraduate courses, for which I have been awarded an institute fellowship.</p>
+  </div>
 
-      <!-- LEFT IMAGE -->
-      <div class="image-card">
-        <img src="profile.jpeg" alt="Profile">
+  <!-- =========================================================
+       PROJECTS / RESEARCH — collapsed by default, tap to expand.
+       Frames render bottom-up: oldest in the markup first,
+       newest last — newest visually lands on top.
+       ========================================================= -->
+  <div class="section" data-section>
+    <div class="section-head" data-toggle>
+      <h2>Research &amp; Projects <span class="tag">// present + past</span></h2>
+      <span class="bracket">{ }</span>
+    </div>
+    <div class="section-body">
+      <div class="stack" data-stack>
+
+        <!-- oldest entry first -->
+        <div class="frame" data-frame>
+          <span class="frame-year"><!-- YEAR --></span>
+          <h3 class="frame-title">Natural Language Processing</h3>
+          <!-- TODO: describe this project — what it was, what you built/found -->
+          <p class="frame-desc"><!-- describe what this project was about --></p>
+        </div>
+
+        <div class="frame" data-frame>
+          <span class="frame-year"><!-- YEAR --></span>
+          <h3 class="frame-title">Distributed Systems</h3>
+          <!-- TODO: describe current distributed systems work -->
+          <p class="frame-desc"><!-- what's the current project, what problem does it solve --></p>
+        </div>
+
+        <!-- newest entry last -->
+        <div class="frame" data-frame>
+          <span class="frame-year"><!-- YEAR --></span>
+          <h3 class="frame-title">Compilers</h3>
+          <!-- TODO: describe current compilers work -->
+          <p class="frame-desc"><!-- what's the current project, what problem does it solve --></p>
+        </div>
+
+        <!-- To add a new project later: copy a .frame block and paste it
+             at the END of this .stack (just above this comment) so it
+             appears on top, like the most recently pushed stack frame. -->
+
       </div>
+    </div>
+  </div>
 
-      <!-- RIGHT TEXT -->
-      <div class="about-content">
+  <!-- =========================================================
+       EXPERIENCE — collapsed by default.
+       ========================================================= -->
+  <div class="section" data-section>
+    <div class="section-head" data-toggle>
+      <h2>Experience <span class="tag">// roles</span></h2>
+      <span class="bracket">{ }</span>
+    </div>
+    <div class="section-body">
+      <div class="stack" data-stack>
 
-        <h2>👤 About Me</h2>
+        <div class="frame" data-frame>
+          <span class="frame-year"><!-- YEAR --></span>
+          <h3 class="frame-title">Subject Matter Expert — GeeksforGeeks (GATE CS)</h3>
+          <!-- TODO: describe what this role involved -->
+          <p class="frame-desc"><!-- describe your responsibilities / contributions --></p>
+        </div>
 
-        <div class="about-box">
-
-          <p>
-            I am Shubham Kumar, a M.Tech student in Computer Science and Engg.(Computer Systems) at 
-            <a href="https://www.iitgn.ac.in/" target="_blank">IIT Gandhinagar</a>, 
-            working under the supervision of 
-            <a href="https://abhishek.people.iitgn.ac.in/" target="_blank">
-              Prof. Abhishek Bichhawat
-            </a>.
-          </p>
-
-          <p>
-            Prior to this, I completed my B.Tech in Computer Science and Engg. at 
-            <a href="https://mgcub.ac.in/" target="_blank">
-              Mahatma Gandhi Central University, Bihar
-            </a>.
-          </p>
-
-          <p>
-            I am currently a member of the 
-            <a href="https://iitgn-fuss.github.io/" target="_blank">
-              FUSS Research Group
-            </a>.
-          </p>
-
-          <p>
-            Alongside my academic work, I serve as a Teaching Assistant for undergraduate courses, 
-            for which I have been awarded an institute fellowship.
-          </p>
-
+        <div class="frame" data-frame>
+          <span class="frame-year"><!-- YEAR --></span>
+          <h3 class="frame-title">Teaching Assistant</h3>
+          <!-- TODO: list the specific courses handled -->
+          <p class="frame-desc"><!-- list courses handled, e.g. "Course A, Course B" --></p>
         </div>
 
       </div>
-
     </div>
+  </div>
 
-    <!-- FOOTER -->
-    <div class="about-footer">
-
-      <img
-        src="https://visitor-badge.laobi.icu/badge?page_id=shubham-iitgn-portfolio&style=flat"
-        alt="visitor count"
-      >
-
-      <p>
-        © 2026 Shubham Kumar. All rights reserved.
-      </p>
-
+  <!-- =========================================================
+       ACHIEVEMENTS — collapsed by default.
+       ========================================================= -->
+  <div class="section" data-section>
+    <div class="section-head" data-toggle>
+      <h2>Achievements <span class="tag">// milestones</span></h2>
+      <span class="bracket">{ }</span>
     </div>
+    <div class="section-body">
 
-  </section>
+      <!-- TODO: replace href with the actual path/link to your CV file -->
+      <a class="btn" href="#" download>&#8595; Download CV</a>
+      <div style="height:18px"></div>
 
-  <!-- ================================= -->
-  <!-- 💻 PROJECTS -->
-  <!-- ================================= -->
+      <div class="stack" data-stack>
 
-  <section id="projects" class="tab">
+        <div class="frame" data-frame>
+          <span class="frame-year"><!-- YEAR --></span>
+          <h3 class="frame-title">JEE Main</h3>
+          <!-- TODO: add rank/percentile/details -->
+          <p class="frame-desc"><!-- e.g. AIR / percentile --></p>
+        </div>
 
-    <h1>Projects</h1>
+        <div class="frame" data-frame>
+          <span class="frame-year"><!-- YEAR --></span>
+          <h3 class="frame-title">UGC NET</h3>
+          <!-- TODO: add details -->
+          <p class="frame-desc"><!-- e.g. subject / result --></p>
+        </div>
 
-    <h2>Present</h2>
-
-    <div class="project" onclick="toggleProject(this)">
-
-      <div class="proj-title">Compilers</div>
-
-      <div class="proj-content">
-        <p>Coming Soon...</p>
-      </div>
-
-    </div>
-
-    <div class="project" onclick="toggleProject(this)">
-
-      <div class="proj-title">Distributed Systems</div>
-
-      <div class="proj-content">
-        <p>Coming Soon...</p>
-      </div>
-
-    </div>
-
-    <h2>Past</h2>
-
-    <div class="project" onclick="toggleProject(this)">
-
-      <div class="proj-title">Natural Language Processing</div>
-
-      <div class="proj-content">
-
-        <div class="sub-project" onclick="toggleSub(event, this)">
-
-          <div class="sub-title">
-            Language Identification System
-          </div>
-
-          <div class="sub-content">
-
-            <p>
-              • Developed a language identification model capable of detecting 22 Indic languages.
-            </p>
-
-            <p>
-              • Used Transformer embeddings for representation learning.
-            </p>
-
-            <p>
-              • Trained alignment between native and romanized scripts.
-            </p>
-
-            <p>
-              • Fine-tuned for multilingual classification.
-            </p>
-
-          </div>
-
+        <div class="frame" data-frame>
+          <span class="frame-year"><!-- YEAR --></span>
+          <h3 class="frame-title">GATE</h3>
+          <!-- TODO: add score/rank -->
+          <p class="frame-desc"><!-- e.g. GATE CS score / AIR --></p>
         </div>
 
       </div>
-
     </div>
+  </div>
 
-  </section>
-
-  <!-- ================================= -->
-  <!-- 🎓 TEACHING -->
-  <!-- ================================= -->
-
-  <section id="teaching" class="tab">
-
-    <h1>Subject Matter Expert</h1>
-
-    <div class="achievement" onclick="toggleAch(this)">
-
-      <div class="ach-title">
-        GeeksforGeeks – GATE Computer Science
+  <!-- =========================================================
+       CONTACT — collapsed by default.
+       ========================================================= -->
+  <div class="section" data-section>
+    <div class="section-head" data-toggle>
+      <h2>Contact <span class="tag">// reach me</span></h2>
+      <span class="bracket">{ }</span>
+    </div>
+    <div class="section-body">
+      <div class="contact-row">
+        <!-- TODO: replace with your actual LinkedIn URL -->
+        <a class="btn" href="https://linkedin.com/" target="_blank" rel="noopener">LinkedIn ↗</a>
+        <a class="btn" href="mailto:shubham.k@iitgn.ac.in">Email ↗</a>
+        <!-- Add more, e.g. GitHub / Google Scholar / X, following the same .btn pattern -->
       </div>
-
-      <div class="ach-content">
-
-        <p>
-          Framing questions for test series and daily problem solving.
-        </p>
-
-      </div>
-
     </div>
+  </div>
 
-    <h1>Teaching Assistant</h1>
+</div>
 
-    <div class="achievement" onclick="toggleAch(this)">
+<footer>
+  <p><span class="slashes">//</span> thank you for stopping by — glad you made it this far.</p>
+</footer>
 
-      <div class="ach-title">
-        Courses Handled
-      </div>
+<script>
+(function(){
+  "use strict";
 
-      <div class="ach-content">
+  /* ---------- BOOT SEQUENCE ---------- */
+  var boot = document.getElementById('boot');
+  var bootText = document.getElementById('boot-text');
+  var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-        <p>
-          ES119 : Principles of AI (Jan 2026 - April 2026)
-        </p>
+  if(reduced){
+    boot.style.display = 'none';
+  } else {
+    setTimeout(function(){
+      bootText.textContent = '$ compiled in 0.42s — welcome';
+    }, 550);
+    setTimeout(function(){
+      boot.style.opacity = '0';
+      setTimeout(function(){ boot.style.display = 'none'; }, 500);
+    }, 1100);
+  }
 
-        <p>
-          ES242 : Data Structures and Algorithms (Aug 2025 - Nov 2025)
-        </p>
+  /* ---------- NAME DECODE ANIMATION ---------- */
+  var nameEl = document.getElementById('nameReveal');
+  var finalText = "Shubham Kumar";
+  var glyphs = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
 
-      </div>
+  if(!reduced){
+    var frame = 0;
+    var totalFrames = 18;
+    var cursorSpan = '<span class="cur"></span>';
 
-    </div>
+    var interval = setInterval(function(){
+      var revealCount = Math.floor((frame / totalFrames) * finalText.length);
+      var out = "";
+      for(var i=0; i<finalText.length; i++){
+        if(finalText[i] === " "){ out += " "; continue; }
+        if(i < revealCount){ out += finalText[i]; }
+        else { out += glyphs[Math.floor(Math.random()*glyphs.length)]; }
+      }
+      nameEl.innerHTML = out + cursorSpan;
+      frame++;
+      if(frame > totalFrames){
+        clearInterval(interval);
+        nameEl.innerHTML = finalText + cursorSpan;
+      }
+    }, 45);
+  }
 
-  </section>
+  /* ---------- THEME TOGGLE (default: dark) ---------- */
+  var root = document.documentElement;
+  var toggle = document.getElementById('themeToggle');
+  var label = document.getElementById('themeLabel');
 
-  <!-- ================================= -->
-  <!-- 🏆 ACHIEVEMENTS -->
-  <!-- ================================= -->
+  var saved = localStorage.getItem('theme');
+  if(saved === 'light' || saved === 'dark'){
+    root.setAttribute('data-theme', saved);
+  }
+  function syncLabel(){
+    label.textContent = root.getAttribute('data-theme');
+  }
+  syncLabel();
 
-  <section id="achievements" class="tab">
+  toggle.addEventListener('click', function(){
+    var current = root.getAttribute('data-theme');
+    var next = current === 'dark' ? 'light' : 'dark';
+    root.setAttribute('data-theme', next);
+    localStorage.setItem('theme', next);
+    syncLabel();
+  });
 
-    <h1>Achievements</h1>
+  /* ---------- ACCORDION SECTIONS ---------- */
+  document.querySelectorAll('[data-toggle]').forEach(function(head){
+    head.addEventListener('click', function(){
+      var section = head.closest('[data-section]');
+      var body = section.querySelector('.section-body');
+      var isOpen = section.classList.contains('open');
 
-    <div class="achievement" onclick="toggleAch(this)">
+      if(isOpen){
+        section.classList.remove('open');
+        body.style.maxHeight = null;
+      } else {
+        section.classList.add('open');
+        body.style.maxHeight = body.scrollHeight + 'px';
+        // reveal stack frames inside this section with a stagger
+        var frames = section.querySelectorAll('[data-frame]');
+        frames.forEach(function(f, idx){
+          setTimeout(function(){ f.classList.add('in'); }, idx * 90);
+        });
+      }
+    });
+  });
 
-      <div class="ach-title">JEE Main</div>
+  // recalc open section heights on resize (e.g. rotate on mobile)
+  window.addEventListener('resize', function(){
+    document.querySelectorAll('.section.open .section-body').forEach(function(body){
+      body.style.maxHeight = body.scrollHeight + 'px';
+    });
+  });
 
-      <div class="ach-content">
-        <p>JEE MAIN 2021 QUALIFIED</p>
-      </div>
+  /* ---------- CURSOR SPOTLIGHT (desktop only) ---------- */
+  var isDesktop = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+  if(isDesktop && !reduced){
+    var spot = document.getElementById('spotlight');
+    document.addEventListener('mousemove', function(e){
+      spot.style.setProperty('--mx', e.clientX + 'px');
+      spot.style.setProperty('--my', e.clientY + 'px');
+    });
+  }
 
-    </div>
-
-    <div class="achievement" onclick="toggleAch(this)">
-
-      <div class="ach-title">GATE</div>
-
-      <div class="ach-content">
-        <p>GATE CSE 2025 : AIR 805</p>
-      </div>
-
-    </div>
-
-  </section>
-
-  <!-- ================================= -->
-  <!-- 📄 CV -->
-  <!-- ================================= -->
-
-  <section id="cv" class="tab">
-
-    <h1>Curriculum Vitae</h1>
-
-    <div class="cv-container">
-
-      <iframe id="cvFrame" src="cv.pdf"></iframe>
-
-      <button id="fullscreenBtn">
-        ⛶
-      </button>
-
-    </div>
-
-  </section>
-
-  <!-- ================================= -->
-  <!-- ✉️ CONTACT -->
-  <!-- ================================= -->
-
-  <section id="contact" class="tab">
-
-    <h1>Contact</h1>
-
-    <div class="contact">
-
-      <a href="https://linkedin.com" target="_blank">
-        LinkedIn
-      </a>
-
-      <a href="mailto:shubham.k@iitgn.ac.in">
-        Email
-      </a>
-
-    </div>
-
-  </section>
-
-  <!-- JS -->
-  <script src="script.js"></script>
+})();
+</script>
 
 </body>
 </html>
