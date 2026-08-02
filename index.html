@@ -332,6 +332,24 @@
     <p>Alongside my academic work, I serve as a Teaching Assistant for undergraduate courses, for which I have been awarded an institute fellowship.</p>
   </div>
 
+     <!-- =========================================================
+       Area of Interest — collapsed by default.
+       ========================================================= -->
+<div class="section" data-section>
+  <div class="section-head" data-toggle>
+    <h2>Area of Interest <span class="tag">// my_interest</span></h2>
+    <span class="bracket">{ }</span>
+  </div>
+  <div class="section-body">
+    <div class="stack" data-stack>
+      <div class="frame" data-frame>
+        <p class="frame-desc">Compilers and CPU Parallelism.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
   <!-- =========================================================
        PROJECTS / RESEARCH — collapsed by default, tap to expand.
        Frames render bottom-up: oldest in the markup first,
@@ -353,7 +371,7 @@
              It uses a custom SentencePiece tokenizer and a two-phase training pipeline—combining Triplet Loss pretraining for script-invariant embeddings with Cross-Entropy fine-tuning for classification.  
              The system achieves 96.95% accuracy on native scripts and an overall benchmark accuracy of 88.71% at a fast throughput of ~330 sentences/sec.  
              It effectively supports low-resource languages (e.g., Santali, Manipuri, Dogri) and is fully deployed as a web application.
-          <p class="frame-desc">Indic Language Identification System .</p>
+          <p class="frame-desc">Indic Language Identification System.</p>
         </div>
 
         <div class="frame" data-frame>
@@ -363,7 +381,7 @@
              Distributed File System: Features whole-file client-side caching, primary-backup replication (quorum of 2), and at-most-once RPC semantics with atomic disk renames for crash safety.  
              Compute Engine: Uses a coordinator to assign 500-line data chunks to workers, which run an overflow-safe 6k (+-) 1 trial division primality test.  
              Fault Tolerance: Uses periodic Chandy-Lamport snapshots and worker heartbeats to enable seamless state restoration across worker crashes or cluster failures.  
-          <p class="frame-desc">PrimeFinder: Distributed File System and Prime Finding Application,</p>
+          <p class="frame-desc">PrimeFinder: Distributed File System and Prime Finding Application.</p>
         </div>
 
         <!-- newest entry last -->
@@ -486,23 +504,6 @@
       </div>
     </div>
   </div>
-
-     <!-- =========================================================
-       Area of Interest — collapsed by default.
-       ========================================================= -->
-<div class="section" data-section>
-  <div class="section-head" data-toggle>
-    <h2>Area of Interest <span class="tag">// my_interest</span></h2>
-    <span class="bracket">{ }</span>
-  </div>
-  <div class="section-body">
-    <div class="stack" data-stack>
-      <div class="frame" data-frame>
-        <p class="frame-desc">Compilers and CPU Parallelism.</p>
-      </div>
-    </div>
-  </div>
-</div>
 
   <!-- =========================================================
        CONTACT — collapsed by default.
