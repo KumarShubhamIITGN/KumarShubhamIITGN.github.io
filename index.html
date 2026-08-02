@@ -347,24 +347,30 @@
 
         <!-- oldest entry first -->
         <div class="frame" data-frame>
-          <span class="frame-year"><!-- YEAR --></span>
+          <span class="frame-year">2025</span>
           <h3 class="frame-title">Natural Language Processing</h3>
-          <!-- TODO: describe this project — what it was, what you built/found -->
-          <p class="frame-desc"><!-- describe what this project was about --></p>
+             Bhasha Detect is a lightweight Transformer model that identifies 22 Indic languages across both native scripts and Romanized text within a single consolidated framework.  
+             It uses a custom SentencePiece tokenizer and a two-phase training pipeline—combining Triplet Loss pretraining for script-invariant embeddings with Cross-Entropy fine-tuning for classification.  
+             The system achieves 96.95% accuracy on native scripts and an overall benchmark accuracy of 88.71% at a fast throughput of ~330 sentences/sec.  
+             It effectively supports low-resource languages (e.g., Santali, Manipuri, Dogri) and is fully deployed as a web application.
+          <p class="frame-desc">Indic Language Identification System .</p>
         </div>
 
         <div class="frame" data-frame>
-          <span class="frame-year"><!-- YEAR --></span>
+          <span class="frame-year">2025</span>
           <h3 class="frame-title">Distributed Systems</h3>
-          <!-- TODO: describe current distributed systems work -->
-          <p class="frame-desc"><!-- what's the current project, what problem does it solve --></p>
+             PrimeFinder is a distributed prime-finding system built in Go and gRPC, combining a coordinator-worker architecture with an AFS-inspired distributed file system.  
+             Distributed File System: Features whole-file client-side caching, primary-backup replication (quorum of 2), and at-most-once RPC semantics with atomic disk renames for crash safety.  
+             Compute Engine: Uses a coordinator to assign 500-line data chunks to workers, which run an overflow-safe 6k (+-) 1 trial division primality test.  
+             Fault Tolerance: Uses periodic Chandy-Lamport snapshots and worker heartbeats to enable seamless state restoration across worker crashes or cluster failures.  
+          <p class="frame-desc">PrimeFinder: Distributed File System and Prime Finding Application,</p>
         </div>
 
         <!-- newest entry last -->
         <div class="frame" data-frame>
-          <span class="frame-year"><!-- YEAR --></span>
+          <span class="frame-year">2026</span>
           <h3 class="frame-title">Compilers</h3>
-          <!-- TODO: describe current compilers work -->
+         Working on it, Do come and check later :)
           <p class="frame-desc"><!-- what's the current project, what problem does it solve --></p>
         </div>
 
@@ -480,6 +486,17 @@
       </div>
     </div>
   </div>
+
+     <!-- =========================================================
+       Area of Interest — collapsed by default.
+       ========================================================= -->
+  <div class="section" data-section>
+  <div class="section-head" data-toggle>
+    <h3>Area of Interest <span class="tag">/my_interest</span></h3>
+    <p>Compilers and CPU Parallelism.</p>
+    <span class="bracket">{ }</span>
+  </div>
+</div>
 
   <!-- =========================================================
        CONTACT — collapsed by default.
